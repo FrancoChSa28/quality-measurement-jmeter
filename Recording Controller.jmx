@@ -30,6 +30,51 @@
         <stringProp name="ProxyControlGui.content_type_exclude"></stringProp>
       </ProxyControl>
       <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="host" elementType="Argument">
+            <stringProp name="Argument.name">host</stringProp>
+            <stringProp name="Argument.value">hii1sc-dev.inf.pucp.edu.pe</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="patient_uuid" elementType="Argument">
+            <stringProp name="Argument.name">patient_uuid</stringProp>
+            <stringProp name="Argument.value">6686b5b6-b8df-4596-90c3-d0321cc0e728</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="visitType_uuid" elementType="Argument">
+            <stringProp name="Argument.name">visitType_uuid</stringProp>
+            <stringProp name="Argument.value">b1f0e8a1-9c5d-4f0e-8892-81f3140fbc09</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="location_uuid" elementType="Argument">
+            <stringProp name="Argument.name">location_uuid</stringProp>
+            <stringProp name="Argument.value">35d2234e-129a-4c40-abb2-1ae0b2400001</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="form_uuid" elementType="Argument">
+            <stringProp name="Argument.name">form_uuid</stringProp>
+            <stringProp name="Argument.value">1fe2f9e8-a9b1-34d2-94ce-b897ca2e16cc</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="encounter_form_uuid" elementType="Argument">
+            <stringProp name="Argument.name">encounter_form_uuid</stringProp>
+            <stringProp name="Argument.value">c75f120a-04ec-11e3-8780-2b40bef9a44b</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="diagnosis_first_uuid" elementType="Argument">
+            <stringProp name="Argument.name">diagnosis_first_uuid</stringProp>
+            <stringProp name="Argument.value">326345a0-c79e-45cf-9e7b-4f3ab3cc7d32</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="diagnosis_second_uuid" elementType="Argument">
+            <stringProp name="Argument.name">diagnosis_second_uuid</stringProp>
+            <stringProp name="Argument.value">8f9bcfee-9838-40f2-acd5-9ffc2fdf96be</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -43,58 +88,6 @@
       <hashTree>
         <RecordingController guiclass="RecordController" testclass="RecordingController" testname="Recording Controller"/>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="visit/1.5/261775556/info/collections-37">
-            <stringProp name="HTTPSampler.domain">sync-1-us-west1-g.sync.services.mozilla.com</stringProp>
-            <stringProp name="HTTPSampler.port">443</stringProp>
-            <stringProp name="HTTPSampler.protocol">https</stringProp>
-            <stringProp name="HTTPSampler.path">/1.5/261775556/info/collections</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="authorization" elementType="Header">
-                  <stringProp name="Header.name">authorization</stringProp>
-                  <stringProp name="Header.value">Hawk id=&quot;eyJub2RlIjogImh0dHBzOi8vc3luYy0xLXVzLXdlc3QxLWcuc3luYy5zZXJ2aWNlcy5tb3ppbGxhLmNvbSIsICJmeGFfa2lkIjogIjE3MjIyNzYwNjQ3NzEtdnRzY0NxdElIMDdMVk95b1p6bUYyZyIsICJmeGFfdWlkIjogIjQwNjkxMmI0ZjA4NDQ4MzQ5YjIwNGUzOTlkMjZjZjUzIiwgImhhc2hlZF9kZXZpY2VfaWQiOiAiYjAzZGY3MDYxNzRmNmEwZDllM2UzNmMyYzc0MGY1NjYiLCAiaGFzaGVkX2Z4YV91aWQiOiAiMjg1ZTgwMTZmMTU5NDlmOWJhYzg3ZmEyMTk1ZTVkOTUiLCAidG9rZW5zZXJ2ZXJfb3JpZ2luIjogInJ1c3QiLCAiZXhwaXJlcyI6IDE3NzM2OTY5OTMsICJ1aWQiOiAyNjE3NzU1NTYsICJzYWx0IjogIjJkMzE3OSJ9-ibtH69rtrfS0Xn7WVaEGPMLVdruaRpIZbWOBFya10E=&quot;, ts=&quot;1773694075&quot;, nonce=&quot;0yXN0s6M8aw=&quot;, mac=&quot;R5wg03z/gCjX7S9YOvgdW9U71AIDJiEpVDrs8kmCW6U=&quot;</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Language" elementType="Header">
-                  <stringProp name="Header.name">Accept-Language</stringProp>
-                  <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
-                </elementProp>
-                <elementProp name="Priority" elementType="Header">
-                  <stringProp name="Header.name">Priority</stringProp>
-                  <stringProp name="Header.value">u=4</stringProp>
-                </elementProp>
-                <elementProp name="Cache-Control" elementType="Header">
-                  <stringProp name="Header.name">Cache-Control</stringProp>
-                  <stringProp name="Header.value">no-cache</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Encoding" elementType="Header">
-                  <stringProp name="Header.name">Accept-Encoding</stringProp>
-                  <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
-                </elementProp>
-                <elementProp name="Pragma" elementType="Header">
-                  <stringProp name="Header.name">Pragma</stringProp>
-                  <stringProp name="Header.value">no-cache</stringProp>
-                </elementProp>
-                <elementProp name="User-Agent" elementType="Header">
-                  <stringProp name="Header.name">User-Agent</stringProp>
-                  <stringProp name="Header.value">Firefox/148.0.2 (Windows NT 10.0; Win64; x64) FxSync/1.150.0.20260309125808.desktop</stringProp>
-                </elementProp>
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json;q=0.9,*/*;q=0.2</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-          </hashTree>
           <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager">
             <collectionProp name="AuthManager.auth_list">
               <elementProp name="" elementType="Authorization">
@@ -108,56 +101,14 @@
             <boolProp name="AuthManager.controlledByThreadGroup">false</boolProp>
           </AuthManager>
           <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="visit/openmrs/ws/rest/v1/session-38">
-            <stringProp name="HTTPSampler.domain">hii1sc-dev.inf.pucp.edu.pe</stringProp>
-            <stringProp name="HTTPSampler.port">0</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/session</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Referer" elementType="Header">
-                  <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/login</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Language" elementType="Header">
-                  <stringProp name="Header.name">Accept-Language</stringProp>
-                  <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
-                </elementProp>
-                <elementProp name="Priority" elementType="Header">
-                  <stringProp name="Header.name">Priority</stringProp>
-                  <stringProp name="Header.value">u=0</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Encoding" elementType="Header">
-                  <stringProp name="Header.name">Accept-Encoding</stringProp>
-                  <stringProp name="Header.value">gzip, deflate</stringProp>
-                </elementProp>
-                <elementProp name="Disable-WWW-Authenticate" elementType="Header">
-                  <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
-                  <stringProp name="Header.value">true</stringProp>
-                </elementProp>
-                <elementProp name="User-Agent" elementType="Header">
-                  <stringProp name="Header.name">User-Agent</stringProp>
-                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
-                </elementProp>
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="visit/openmrs/ws/rest/v1/session-40">
-            <stringProp name="HTTPSampler.domain">hii1sc-dev.inf.pucp.edu.pe</stringProp>
+          <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager">
+            <collectionProp name="CookieManager.cookies"/>
+            <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+            <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+          </CookieManager>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET sesion">
+            <stringProp name="HTTPSampler.domain">${host}</stringProp>
             <stringProp name="HTTPSampler.port">0</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/session</stringProp>
@@ -209,10 +160,10 @@
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET person">
-            <stringProp name="HTTPSampler.domain">hii1sc-dev.inf.pucp.edu.pe</stringProp>
+            <stringProp name="HTTPSampler.domain">${host}</stringProp>
             <stringProp name="HTTPSampler.port">0</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/person/6686b5b6-b8df-4596-90c3-d0321cc0e728</stringProp>
+            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/person/${patient_uuid}</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
@@ -265,11 +216,11 @@
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET patient">
-            <stringProp name="HTTPSampler.domain">hii1sc-dev.inf.pucp.edu.pe</stringProp>
+            <stringProp name="HTTPSampler.domain">${host}</stringProp>
             <stringProp name="HTTPSampler.port">0</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/fhir2/R4/Patient/6686b5b6-b8df-4596-90c3-d0321cc0e728</stringProp>
+            <stringProp name="HTTPSampler.path">/openmrs/ws/fhir2/R4/Patient/${patient_uuid}</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
@@ -317,8 +268,8 @@
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET location">
-            <stringProp name="HTTPSampler.domain">hii1sc-dev.inf.pucp.edu.pe</stringProp>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET location" enabled="true">
+            <stringProp name="HTTPSampler.domain">${host}</stringProp>
             <stringProp name="HTTPSampler.port">0</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/location</stringProp>
@@ -374,7 +325,7 @@
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET visittype">
-            <stringProp name="HTTPSampler.domain">hii1sc-dev.inf.pucp.edu.pe</stringProp>
+            <stringProp name="HTTPSampler.domain">${host}</stringProp>
             <stringProp name="HTTPSampler.port">0</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/visittype</stringProp>
@@ -421,8 +372,23 @@
             </HeaderManager>
             <hashTree/>
           </hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor - startDatetime">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">import java.time.*
+import java.time.format.DateTimeFormatter
+
+def now = Instant.now()
+def formatter = DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd&apos;T&apos;HH:mm:ss.SSS&apos;Z&apos;&quot;)
+    .withZone(ZoneOffset.UTC)
+
+vars.put(&quot;startDatetime&quot;, formatter.format(now))</stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST visit">
-            <stringProp name="HTTPSampler.domain">hii1sc-dev.inf.pucp.edu.pe</stringProp>
+            <stringProp name="HTTPSampler.domain">${host}</stringProp>
             <stringProp name="HTTPSampler.port">0</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
@@ -435,14 +401,14 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;visitType&quot;:&quot;b1f0e8a1-9c5d-4f0e-8892-81f3140fbc09&quot;,&quot;location&quot;:&quot;35d2234e-129a-4c40-abb2-1ae0b2400001&quot;,&quot;startDatetime&quot;:&quot;2026-03-16T20:53:00.000Z&quot;,&quot;stopDatetime&quot;:null,&quot;patient&quot;:&quot;6686b5b6-b8df-4596-90c3-d0321cc0e728&quot;}</stringProp>
+                  <stringProp name="Argument.value">{&quot;visitType&quot;:&quot;${visitType_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;startDatetime&quot;:&quot;${startDatetime}&quot;,&quot;stopDatetime&quot;:null,&quot;patient&quot;:&quot;${patient_uuid}&quot;}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Referer" elementType="Header">
                   <stringProp name="Header.name">Referer</stringProp>
@@ -483,12 +449,19 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract Visit UUID">
+              <stringProp name="JSONPostProcessor.referenceNames">visit_uuid</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.[&apos;uuid&apos;]</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET forms">
-            <stringProp name="HTTPSampler.domain">hii1sc-dev.inf.pucp.edu.pe</stringProp>
+            <stringProp name="HTTPSampler.domain">${host}</stringProp>
             <stringProp name="HTTPSampler.port">0</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/o3/forms/1fe2f9e8-a9b1-34d2-94ce-b897ca2e16cc</stringProp>
+            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/o3/forms/${form_uuid}</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
@@ -533,7 +506,7 @@
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST forms">
-            <stringProp name="HTTPSampler.domain">hii1sc-dev.inf.pucp.edu.pe</stringProp>
+            <stringProp name="HTTPSampler.domain">${host}</stringProp>
             <stringProp name="HTTPSampler.port">0</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
@@ -546,7 +519,7 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;patient&quot;:&quot;6686b5b6-b8df-4596-90c3-d0321cc0e728&quot;,&quot;location&quot;:&quot;35d2234e-129a-4c40-abb2-1ae0b2400001&quot;,&quot;encounterType&quot;:&quot;a990eabc-3405-419f-bfb1-96ca2d8279b8&quot;,&quot;encounterProviders&quot;:[{&quot;provider&quot;:&quot;54997cc8-2365-4ad1-99f4-6dfc4cf36132&quot;,&quot;encounterRole&quot;:&quot;240b26f9-dd88-4172-823d-4a8bfeb7841f&quot;}],&quot;obs&quot;:[{&quot;value&quot;:&quot;8df41ac3-214c-4eb8-95f7-55ae0456d0d0&quot;,&quot;concept&quot;:&quot;ecc332d2-6ca1-4238-ac14-d0de521bdb11&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-subtestsCoordinacióN&quot;},{&quot;value&quot;:&quot;0e785fdd-db0c-4ff9-8d24-3a2264081f27&quot;,&quot;concept&quot;:&quot;736e8857-21c8-4c11-b9f1-e154f64bfff2&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-reconoceGrandeYChico(Lam.6)&quot;},{&quot;value&quot;:&quot;1e9aee82-d6cc-4178-bdb2-96bb849e1737&quot;,&quot;concept&quot;:&quot;0facbe63-2b6a-4cab-bfe8-aa618e797df0&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-reconoceMáSYMenos(Lam.7)&quot;},{&quot;value&quot;:&quot;c42d218d-619d-4598-a371-550e5b383035&quot;,&quot;concept&quot;:&quot;cfe1cc7b-8917-4f0e-ab57-406a14a2c8e8&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-nombraAnimales(Lam.8)&quot;},{&quot;value&quot;:&quot;6ee9174e-da0b-4c4b-8d2a-bd0cabb490e0&quot;,&quot;concept&quot;:&quot;cfe1cc7b-8917-4f0e-ab57-406a14a2c8e8&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-nombraAnimales(Lam.8)&quot;},{&quot;value&quot;:&quot;8ea70651-21a2-477d-8abd-dd7f9258734a&quot;,&quot;concept&quot;:&quot;cfe1cc7b-8917-4f0e-ab57-406a14a2c8e8&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-nombraAnimales(Lam.8)&quot;}],&quot;form&quot;:{&quot;uuid&quot;:&quot;1fe2f9e8-a9b1-34d2-94ce-b897ca2e16cc&quot;},&quot;visit&quot;:&quot;5f64d667-e0f4-46dc-8169-fc16a8410872&quot;,&quot;orders&quot;:[],&quot;diagnoses&quot;:[]}</stringProp>
+                  <stringProp name="Argument.value">{&quot;patient&quot;:&quot;${patient_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;encounterType&quot;:&quot;a990eabc-3405-419f-bfb1-96ca2d8279b8&quot;,&quot;encounterProviders&quot;:[{&quot;provider&quot;:&quot;54997cc8-2365-4ad1-99f4-6dfc4cf36132&quot;,&quot;encounterRole&quot;:&quot;240b26f9-dd88-4172-823d-4a8bfeb7841f&quot;}],&quot;obs&quot;:[{&quot;value&quot;:&quot;8df41ac3-214c-4eb8-95f7-55ae0456d0d0&quot;,&quot;concept&quot;:&quot;ecc332d2-6ca1-4238-ac14-d0de521bdb11&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-subtestsCoordinacióN&quot;},{&quot;value&quot;:&quot;0e785fdd-db0c-4ff9-8d24-3a2264081f27&quot;,&quot;concept&quot;:&quot;736e8857-21c8-4c11-b9f1-e154f64bfff2&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-reconoceGrandeYChico(Lam.6)&quot;},{&quot;value&quot;:&quot;1e9aee82-d6cc-4178-bdb2-96bb849e1737&quot;,&quot;concept&quot;:&quot;0facbe63-2b6a-4cab-bfe8-aa618e797df0&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-reconoceMáSYMenos(Lam.7)&quot;},{&quot;value&quot;:&quot;c42d218d-619d-4598-a371-550e5b383035&quot;,&quot;concept&quot;:&quot;cfe1cc7b-8917-4f0e-ab57-406a14a2c8e8&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-nombraAnimales(Lam.8)&quot;},{&quot;value&quot;:&quot;6ee9174e-da0b-4c4b-8d2a-bd0cabb490e0&quot;,&quot;concept&quot;:&quot;cfe1cc7b-8917-4f0e-ab57-406a14a2c8e8&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-nombraAnimales(Lam.8)&quot;},{&quot;value&quot;:&quot;8ea70651-21a2-477d-8abd-dd7f9258734a&quot;,&quot;concept&quot;:&quot;cfe1cc7b-8917-4f0e-ab57-406a14a2c8e8&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-nombraAnimales(Lam.8)&quot;}],&quot;form&quot;:{&quot;uuid&quot;:&quot;${form_uuid}&quot;},&quot;visit&quot;:&quot;${visit_uuid}&quot;,&quot;orders&quot;:[],&quot;diagnoses&quot;:[]}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -595,8 +568,23 @@
             </HeaderManager>
             <hashTree/>
           </hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor - encounterDatetime">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">import java.time.*
+import java.time.format.DateTimeFormatter
+
+def now = Instant.now()
+def formatter = DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd&apos;T&apos;HH:mm:ss.SSS&apos;Z&apos;&quot;)
+    .withZone(ZoneOffset.UTC)
+
+vars.put(&quot;encounterDatetime&quot;, formatter.format(now))</stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST encounter (set orders)">
-            <stringProp name="HTTPSampler.domain">hii1sc-dev.inf.pucp.edu.pe</stringProp>
+            <stringProp name="HTTPSampler.domain">${host}</stringProp>
             <stringProp name="HTTPSampler.port">0</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
@@ -609,7 +597,7 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;patient&quot;:&quot;6686b5b6-b8df-4596-90c3-d0321cc0e728&quot;,&quot;location&quot;:&quot;35d2234e-129a-4c40-abb2-1ae0b2400001&quot;,&quot;encounterType&quot;:&quot;39da3525-afe4-45ff-8977-c53b7b359158&quot;,&quot;visit&quot;:&quot;5f64d667-e0f4-46dc-8169-fc16a8410872&quot;,&quot;obs&quot;:[],&quot;orders&quot;:[{&quot;action&quot;:&quot;NEW&quot;,&quot;patient&quot;:&quot;6686b5b6-b8df-4596-90c3-d0321cc0e728&quot;,&quot;type&quot;:&quot;drugorder&quot;,&quot;careSetting&quot;:&quot;6f0c9a92-6f24-11e3-af88-005056821db0&quot;,&quot;orderer&quot;:&quot;fc23b972-88bd-4b18-9de7-2249cc0ad3f5&quot;,&quot;encounter&quot;:null,&quot;drug&quot;:&quot;7840c95c-92c2-42c9-b56c-ddda19b00807&quot;,&quot;dose&quot;:1,&quot;doseUnits&quot;:&quot;1bf39dc2-bf7e-40b8-931c-9b634b8db71c&quot;,&quot;route&quot;:&quot;bde472ba-b68c-49fb-a294-ea5ff387998e&quot;,&quot;frequency&quot;:&quot;736ebdb7-9989-47cf-8ec2-4e8b2ffe0ab2&quot;,&quot;asNeeded&quot;:false,&quot;asNeededCondition&quot;:&quot;&quot;,&quot;numRefills&quot;:0,&quot;quantity&quot;:10,&quot;quantityUnits&quot;:&quot;1bf39dc2-bf7e-40b8-931c-9b634b8db71c&quot;,&quot;duration&quot;:5,&quot;durationUnits&quot;:&quot;1072AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;,&quot;dosingType&quot;:&quot;org.openmrs.SimpleDosingInstructions&quot;,&quot;dosingInstructions&quot;:&quot;&quot;,&quot;concept&quot;:&quot;de7e14ab-8a52-47b6-9a91-1df36b16322d&quot;,&quot;orderReasonNonCoded&quot;:&quot;Tomar una cápsula cada doce horas durante cinco días para tratar la infección.&quot;}]}</stringProp>
+                  <stringProp name="Argument.value">{&quot;patient&quot;:&quot;${patient_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;encounterType&quot;:&quot;39da3525-afe4-45ff-8977-c53b7b359158&quot;,&quot;encounterDatetime&quot;:&quot;${encounterDatetime}&quot;,&quot;visit&quot;:&quot;${visit_uuid}&quot;,&quot;obs&quot;:[],&quot;orders&quot;:[{&quot;action&quot;:&quot;NEW&quot;,&quot;patient&quot;:&quot;${patient_uuid}&quot;,&quot;type&quot;:&quot;drugorder&quot;,&quot;careSetting&quot;:&quot;6f0c9a92-6f24-11e3-af88-005056821db0&quot;,&quot;orderer&quot;:&quot;fc23b972-88bd-4b18-9de7-2249cc0ad3f5&quot;,&quot;encounter&quot;:null,&quot;drug&quot;:&quot;fea1180e-c138-4d37-a5c0-4b964cb00808&quot;,&quot;dose&quot;:1,&quot;doseUnits&quot;:&quot;1bf39dc2-bf7e-40b8-931c-9b634b8db71c&quot;,&quot;route&quot;:&quot;bde472ba-b68c-49fb-a294-ea5ff387998e&quot;,&quot;frequency&quot;:&quot;136ebdb7-e989-47cf-8ec2-4e8b2ffe0ab3&quot;,&quot;asNeeded&quot;:false,&quot;asNeededCondition&quot;:&quot;&quot;,&quot;numRefills&quot;:0,&quot;quantity&quot;:10,&quot;quantityUnits&quot;:&quot;1bf39dc2-bf7e-40b8-931c-9b634b8db71c&quot;,&quot;duration&quot;:1,&quot;durationUnits&quot;:&quot;1072AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;,&quot;dosingType&quot;:&quot;org.openmrs.SimpleDosingInstructions&quot;,&quot;dosingInstructions&quot;:&quot;&quot;,&quot;concept&quot;:&quot;de7e14ab-8a52-47b6-9a91-1df36b16322d&quot;,&quot;orderReasonNonCoded&quot;:&quot;Tomar una cápsula cada doce horas durante cinco días para tratar la infección.&quot;}]}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -659,7 +647,7 @@
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST encounter">
-            <stringProp name="HTTPSampler.domain">hii1sc-dev.inf.pucp.edu.pe</stringProp>
+            <stringProp name="HTTPSampler.domain">${host}</stringProp>
             <stringProp name="HTTPSampler.port">0</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
@@ -672,7 +660,7 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;form&quot;:&quot;c75f120a-04ec-11e3-8780-2b40bef9a44b&quot;,&quot;patient&quot;:&quot;6686b5b6-b8df-4596-90c3-d0321cc0e728&quot;,&quot;location&quot;:&quot;35d2234e-129a-4c40-abb2-1ae0b2400001&quot;,&quot;encounterProviders&quot;:[{&quot;encounterRole&quot;:&quot;240b26f9-dd88-4172-823d-4a8bfeb7841f&quot;,&quot;provider&quot;:&quot;fc23b972-88bd-4b18-9de7-2249cc0ad3f5&quot;}],&quot;encounterType&quot;:&quot;d7151f82-c1f3-4152-a605-2f9ea7414a79&quot;,&quot;obs&quot;:[{&quot;concept&quot;:{&quot;uuid&quot;:&quot;162169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;,&quot;display&quot;:&quot;&quot;},&quot;value&quot;:&quot;Paciente con diagnóstico de SIDA, presenta traumatismo de nerviosa cervical, se recomienda evaluación neurológica urgente y manejo adecuado del dolor.&quot;}]}</stringProp>
+                  <stringProp name="Argument.value">{&quot;form&quot;:&quot;${encounter_form_uuid}&quot;,&quot;patient&quot;:&quot;${patient_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;encounterProviders&quot;:[{&quot;encounterRole&quot;:&quot;240b26f9-dd88-4172-823d-4a8bfeb7841f&quot;,&quot;provider&quot;:&quot;fc23b972-88bd-4b18-9de7-2249cc0ad3f5&quot;}],&quot;encounterType&quot;:&quot;d7151f82-c1f3-4152-a605-2f9ea7414a79&quot;,&quot;obs&quot;:[{&quot;concept&quot;:{&quot;uuid&quot;:&quot;162169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;,&quot;display&quot;:&quot;&quot;},&quot;value&quot;:&quot;Paciente con diagnóstico de SIDA, presenta traumatismo de nerviosa cervical, se recomienda evaluación neurológica urgente y manejo adecuado del dolor.&quot;}]}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -720,9 +708,16 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract Encounter UUID">
+              <stringProp name="JSONPostProcessor.referenceNames">encounter_uuid</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.[&apos;uuid&apos;]</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST patientdiagnoses (rank 1)">
-            <stringProp name="HTTPSampler.domain">hii1sc-dev.inf.pucp.edu.pe</stringProp>
+            <stringProp name="HTTPSampler.domain">${host}</stringProp>
             <stringProp name="HTTPSampler.port">0</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/patientdiagnoses</stringProp>
@@ -734,7 +729,7 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;encounter&quot;:&quot;ca3e46ae-5450-4b9a-a06d-0b52cc6db7f6&quot;,&quot;patient&quot;:&quot;6686b5b6-b8df-4596-90c3-d0321cc0e728&quot;,&quot;condition&quot;:null,&quot;diagnosis&quot;:{&quot;coded&quot;:&quot;326345a0-c79e-45cf-9e7b-4f3ab3cc7d32&quot;},&quot;certainty&quot;:&quot;PROVISIONAL&quot;,&quot;rank&quot;:1}</stringProp>
+                  <stringProp name="Argument.value">{&quot;encounter&quot;:&quot;${encounter_uuid}&quot;,&quot;patient&quot;:&quot;${patient_uuid}&quot;,&quot;condition&quot;:null,&quot;diagnosis&quot;:{&quot;coded&quot;:&quot;${diagnosis_first_uuid}&quot;},&quot;certainty&quot;:&quot;PROVISIONAL&quot;,&quot;rank&quot;:1}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -783,8 +778,8 @@
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST patientdiagnoses (rank 2)">
-            <stringProp name="HTTPSampler.domain">hii1sc-dev.inf.pucp.edu.pe</stringProp>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST patientdiagnoses (rank 2)" enabled="true">
+            <stringProp name="HTTPSampler.domain">${host}</stringProp>
             <stringProp name="HTTPSampler.port">0</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/patientdiagnoses</stringProp>
@@ -796,7 +791,7 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;encounter&quot;:&quot;ca3e46ae-5450-4b9a-a06d-0b52cc6db7f6&quot;,&quot;patient&quot;:&quot;6686b5b6-b8df-4596-90c3-d0321cc0e728&quot;,&quot;condition&quot;:null,&quot;diagnosis&quot;:{&quot;coded&quot;:&quot;8f9bcfee-9838-40f2-acd5-9ffc2fdf96be&quot;},&quot;certainty&quot;:&quot;PROVISIONAL&quot;,&quot;rank&quot;:2}</stringProp>
+                  <stringProp name="Argument.value">{&quot;encounter&quot;:&quot;${encounter_uuid}&quot;,&quot;patient&quot;:&quot;${patient_uuid}&quot;,&quot;condition&quot;:null,&quot;diagnosis&quot;:{&quot;coded&quot;:&quot;${diagnosis_second_uuid}&quot;},&quot;certainty&quot;:&quot;PROVISIONAL&quot;,&quot;rank&quot;:2}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -845,12 +840,27 @@
             </HeaderManager>
             <hashTree/>
           </hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor - stopDatetime">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.time.*
+import java.time.format.DateTimeFormatter
+
+def now = Instant.now()
+def formatter = DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd&apos;T&apos;HH:mm:ss.SSS&apos;Z&apos;&quot;)
+    .withZone(ZoneOffset.UTC)
+
+vars.put(&quot;stopDatetime&quot;, formatter.format(now))</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST visit (end)">
-            <stringProp name="HTTPSampler.domain">hii1sc-dev.inf.pucp.edu.pe</stringProp>
+            <stringProp name="HTTPSampler.domain">${host}</stringProp>
             <stringProp name="HTTPSampler.port">0</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/visit/5f64d667-e0f4-46dc-8169-fc16a8410872</stringProp>
+            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/visit/${visit_uuid}</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
@@ -859,7 +869,7 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;stopDatetime&quot;:&quot;2026-03-16T20:57:04.444Z&quot;}</stringProp>
+                  <stringProp name="Argument.value">{&quot;stopDatetime&quot;:&quot;${stopDatetime}&quot;}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -908,8 +918,8 @@
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST encounter (set DISCONTINUE to order)">
-            <stringProp name="HTTPSampler.domain">hii1sc-dev.inf.pucp.edu.pe</stringProp>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST encounter (set DISCONTINUE to order)" enabled="false">
+            <stringProp name="HTTPSampler.domain">${host}</stringProp>
             <stringProp name="HTTPSampler.port">0</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
             <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
@@ -971,6 +981,43 @@
             </HeaderManager>
             <hashTree/>
           </hashTree>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
         </hashTree>
       </hashTree>
     </hashTree>
