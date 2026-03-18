@@ -351,7 +351,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;person&quot;:{&quot;names&quot;:[{&quot;preferred&quot;:true,&quot;givenName&quot;:&quot;Richard&quot;,&quot;middleName&quot;:&quot;&quot;,&quot;familyName&quot;:&quot;Damian Rojas&quot;}],&quot;gender&quot;:&quot;M&quot;,&quot;birthdate&quot;:&quot;2026-3-14&quot;,&quot;birthdateEstimated&quot;:false,&quot;attributes&quot;:[],&quot;addresses&quot;:[{&quot;country&quot;:&quot;PERU&quot;,&quot;stateProvince&quot;:&quot;MAYNAS&quot;,&quot;address1&quot;:&quot;LORETO&quot;}],&quot;dead&quot;:false},&quot;identifiers&quot;:[{&quot;identifier&quot;:&quot;78986529&quot;,&quot;identifierType&quot;:&quot;${dni_type_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;preferred&quot;:true},{&quot;identifier&quot;:&quot;${identifier_uuid}&quot;,&quot;identifierType&quot;:&quot;${hc_type_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;preferred&quot;:false}]}</stringProp>
+                <stringProp name="Argument.value">{&quot;person&quot;:{&quot;names&quot;:[{&quot;preferred&quot;:true,&quot;givenName&quot;:&quot;Saul&quot;,&quot;middleName&quot;:&quot;&quot;,&quot;familyName&quot;:&quot;Damian Rojas&quot;}],&quot;gender&quot;:&quot;M&quot;,&quot;birthdate&quot;:&quot;2026-3-14&quot;,&quot;birthdateEstimated&quot;:false,&quot;attributes&quot;:[],&quot;addresses&quot;:[{&quot;country&quot;:&quot;PERU&quot;,&quot;stateProvince&quot;:&quot;MAYNAS&quot;,&quot;address1&quot;:&quot;LORETO&quot;}],&quot;dead&quot;:false},&quot;identifiers&quot;:[{&quot;identifier&quot;:&quot;78986530&quot;,&quot;identifierType&quot;:&quot;${dni_type_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;preferred&quot;:true},{&quot;identifier&quot;:&quot;${identifier_uuid}&quot;,&quot;identifierType&quot;:&quot;${hc_type_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;preferred&quot;:false}]}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -407,7 +407,7 @@
           </JSONPostProcessor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET person" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET person">
           <stringProp name="HTTPSampler.domain">${host}</stringProp>
           <stringProp name="HTTPSampler.port">0</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
@@ -1230,6 +1230,43 @@ vars.put(&quot;stopDatetime&quot;, formatter.format(now))</stringProp>
           <hashTree/>
         </hashTree>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
