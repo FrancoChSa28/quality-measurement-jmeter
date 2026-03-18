@@ -39,11 +39,6 @@
             <stringProp name="Argument.value">hii1sc-dev.inf.pucp.edu.pe</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="patient_uuid" elementType="Argument">
-            <stringProp name="Argument.name">patient_uuid</stringProp>
-            <stringProp name="Argument.value">6686b5b6-b8df-4596-90c3-d0321cc0e728</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
           <elementProp name="visitType_uuid" elementType="Argument">
             <stringProp name="Argument.name">visitType_uuid</stringProp>
             <stringProp name="Argument.value">b1f0e8a1-9c5d-4f0e-8892-81f3140fbc09</stringProp>
@@ -74,6 +69,16 @@
             <stringProp name="Argument.value">8f9bcfee-9838-40f2-acd5-9ffc2fdf96be</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="dni_type_uuid" elementType="Argument">
+            <stringProp name="Argument.name">dni_type_uuid</stringProp>
+            <stringProp name="Argument.value">550e8400-e29b-41d4-a716-446655440001</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="hc_type_uuid" elementType="Argument">
+            <stringProp name="Argument.name">hc_type_uuid</stringProp>
+            <stringProp name="Argument.value">05a29f94-c0ed-11e2-94be-8c13b969e334</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -88,492 +93,538 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <RecordingController guiclass="RecordController" testclass="RecordingController" testname="Recording Controller" enabled="true"/>
+        <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager">
+          <collectionProp name="AuthManager.auth_list">
+            <elementProp name="" elementType="Authorization">
+              <stringProp name="Authorization.url">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/ws/rest/v1/</stringProp>
+              <stringProp name="Authorization.username">YOL123</stringProp>
+              <stringProp name="Authorization.password">SantaClotilde123</stringProp>
+              <stringProp name="Authorization.domain"></stringProp>
+              <stringProp name="Authorization.realm"></stringProp>
+            </elementProp>
+          </collectionProp>
+          <boolProp name="AuthManager.controlledByThreadGroup">false</boolProp>
+        </AuthManager>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+          <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET sesion">
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">0</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/session</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
         <hashTree>
-          <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager">
-            <collectionProp name="AuthManager.auth_list">
-              <elementProp name="" elementType="Authorization">
-                <stringProp name="Authorization.url">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/ws/rest/v1/</stringProp>
-                <stringProp name="Authorization.username">YOL123</stringProp>
-                <stringProp name="Authorization.password">SantaClotilde123</stringProp>
-                <stringProp name="Authorization.domain"></stringProp>
-                <stringProp name="Authorization.realm"></stringProp>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/home/appointments</stringProp>
+              </elementProp>
+              <elementProp name="x-omrs-offline-caching-strategy" elementType="Header">
+                <stringProp name="Header.name">x-omrs-offline-caching-strategy</stringProp>
+                <stringProp name="Header.value">network-first</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=4</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Disable-WWW-Authenticate" elementType="Header">
+                <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
+                <stringProp name="Header.value">true</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
             </collectionProp>
-            <boolProp name="AuthManager.controlledByThreadGroup">false</boolProp>
-          </AuthManager>
+          </HeaderManager>
           <hashTree/>
-          <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager">
-            <collectionProp name="CookieManager.cookies"/>
-            <boolProp name="CookieManager.clearEachIteration">false</boolProp>
-            <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
-          </CookieManager>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET identifier">
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">0</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/patientidentifiertype?v=default</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=4</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Disable-WWW-Authenticate" elementType="Header">
+                <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
+                <stringProp name="Header.value">true</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
           <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET sesion">
-            <stringProp name="HTTPSampler.domain">${host}</stringProp>
-            <stringProp name="HTTPSampler.port">0</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/session</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Referer" elementType="Header">
-                  <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/home/appointments</stringProp>
-                </elementProp>
-                <elementProp name="x-omrs-offline-caching-strategy" elementType="Header">
-                  <stringProp name="Header.name">x-omrs-offline-caching-strategy</stringProp>
-                  <stringProp name="Header.value">network-first</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Language" elementType="Header">
-                  <stringProp name="Header.name">Accept-Language</stringProp>
-                  <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
-                </elementProp>
-                <elementProp name="Priority" elementType="Header">
-                  <stringProp name="Header.name">Priority</stringProp>
-                  <stringProp name="Header.value">u=4</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Encoding" elementType="Header">
-                  <stringProp name="Header.name">Accept-Encoding</stringProp>
-                  <stringProp name="Header.value">gzip, deflate</stringProp>
-                </elementProp>
-                <elementProp name="Disable-WWW-Authenticate" elementType="Header">
-                  <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
-                  <stringProp name="Header.value">true</stringProp>
-                </elementProp>
-                <elementProp name="User-Agent" elementType="Header">
-                  <stringProp name="Header.name">User-Agent</stringProp>
-                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
-                </elementProp>
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET identifier">
-            <stringProp name="HTTPSampler.domain">${host}</stringProp>
-            <stringProp name="HTTPSampler.port">0</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/patientidentifiertype?v=default</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Referer" elementType="Header">
-                  <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Language" elementType="Header">
-                  <stringProp name="Header.name">Accept-Language</stringProp>
-                  <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
-                </elementProp>
-                <elementProp name="Priority" elementType="Header">
-                  <stringProp name="Header.name">Priority</stringProp>
-                  <stringProp name="Header.value">u=4</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Encoding" elementType="Header">
-                  <stringProp name="Header.name">Accept-Encoding</stringProp>
-                  <stringProp name="Header.value">gzip, deflate</stringProp>
-                </elementProp>
-                <elementProp name="Disable-WWW-Authenticate" elementType="Header">
-                  <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
-                  <stringProp name="Header.value">true</stringProp>
-                </elementProp>
-                <elementProp name="User-Agent" elementType="Header">
-                  <stringProp name="Header.name">User-Agent</stringProp>
-                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
-                </elementProp>
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract Identifier" enabled="false">
-              <stringProp name="JSONPostProcessor.referenceNames">identifier</stringProp>
-              <stringProp name="JSONPostProcessor.jsonPathExprs">$.[&apos;identifier&apos;]</stringProp>
-              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
-            </JSONPostProcessor>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST identifiersource">
-            <stringProp name="HTTPSampler.domain">${host}</stringProp>
-            <stringProp name="HTTPSampler.port">0</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/idgen/identifiersource/8549f706-7e85-4c1d-9424-217d50a2988b/identifier</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Referer" elementType="Header">
-                  <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Language" elementType="Header">
-                  <stringProp name="Header.name">Accept-Language</stringProp>
-                  <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
-                </elementProp>
-                <elementProp name="Origin" elementType="Header">
-                  <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe</stringProp>
-                </elementProp>
-                <elementProp name="Priority" elementType="Header">
-                  <stringProp name="Header.name">Priority</stringProp>
-                  <stringProp name="Header.value">u=0</stringProp>
-                </elementProp>
-                <elementProp name="Disable-WWW-Authenticate" elementType="Header">
-                  <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
-                  <stringProp name="Header.value">true</stringProp>
-                </elementProp>
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="Content-type" elementType="Header">
-                  <stringProp name="Header.name">Content-type</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Encoding" elementType="Header">
-                  <stringProp name="Header.name">Accept-Encoding</stringProp>
-                  <stringProp name="Header.value">gzip, deflate</stringProp>
-                </elementProp>
-                <elementProp name="User-Agent" elementType="Header">
-                  <stringProp name="Header.name">User-Agent</stringProp>
-                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract identifier">
-              <stringProp name="JSONPostProcessor.referenceNames">identifier_uuid</stringProp>
-              <stringProp name="JSONPostProcessor.jsonPathExprs">$.[&apos;identifier&apos;]</stringProp>
-              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
-            </JSONPostProcessor>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST patient (create patient)">
-            <stringProp name="HTTPSampler.domain">${host}</stringProp>
-            <stringProp name="HTTPSampler.port">0</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/patient</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;person&quot;:{&quot;names&quot;:[{&quot;preferred&quot;:true,&quot;givenName&quot;:&quot;Jose&quot;,&quot;middleName&quot;:&quot;&quot;,&quot;familyName&quot;:&quot;Quiroz Castilla&quot;}],&quot;gender&quot;:&quot;M&quot;,&quot;birthdate&quot;:&quot;2026-3-14&quot;,&quot;birthdateEstimated&quot;:false,&quot;attributes&quot;:[],&quot;addresses&quot;:[{&quot;country&quot;:&quot;PERU&quot;,&quot;stateProvince&quot;:&quot;MAYNAS&quot;,&quot;address1&quot;:&quot;LORETO&quot;}],&quot;dead&quot;:false},&quot;identifiers&quot;:[{&quot;identifier&quot;:&quot;78986522&quot;,&quot;identifierType&quot;:&quot;550e8400-e29b-41d4-a716-446655440001&quot;,&quot;location&quot;:&quot;35d2234e-129a-4c40-abb2-1ae0b2400002&quot;,&quot;preferred&quot;:true},{&quot;identifier&quot;:&quot;${identifier_uuid}&quot;,&quot;identifierType&quot;:&quot;05a29f94-c0ed-11e2-94be-8c13b969e334&quot;,&quot;location&quot;:&quot;35d2234e-129a-4c40-abb2-1ae0b2400002&quot;,&quot;preferred&quot;:false}]}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Referer" elementType="Header">
-                  <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Language" elementType="Header">
-                  <stringProp name="Header.name">Accept-Language</stringProp>
-                  <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
-                </elementProp>
-                <elementProp name="Origin" elementType="Header">
-                  <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe</stringProp>
-                </elementProp>
-                <elementProp name="Priority" elementType="Header">
-                  <stringProp name="Header.name">Priority</stringProp>
-                  <stringProp name="Header.value">u=0</stringProp>
-                </elementProp>
-                <elementProp name="Disable-WWW-Authenticate" elementType="Header">
-                  <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
-                  <stringProp name="Header.value">true</stringProp>
-                </elementProp>
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="Content-type" elementType="Header">
-                  <stringProp name="Header.name">Content-type</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Encoding" elementType="Header">
-                  <stringProp name="Header.name">Accept-Encoding</stringProp>
-                  <stringProp name="Header.value">gzip, deflate</stringProp>
-                </elementProp>
-                <elementProp name="User-Agent" elementType="Header">
-                  <stringProp name="Header.name">User-Agent</stringProp>
-                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract Visit UUID" enabled="true">
-              <stringProp name="JSONPostProcessor.referenceNames">visit_uuid</stringProp>
-              <stringProp name="JSONPostProcessor.jsonPathExprs">$.[&apos;uuid&apos;]</stringProp>
-              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
-            </JSONPostProcessor>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET person" enabled="false">
-            <stringProp name="HTTPSampler.domain">${host}</stringProp>
-            <stringProp name="HTTPSampler.port">0</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/person/${patient_uuid}</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="v" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                  <stringProp name="Argument.name">v</stringProp>
-                  <stringProp name="Argument.value">custom:(causeOfDeath:(display),causeOfDeathNonCoded)</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Referer" elementType="Header">
-                  <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Language" elementType="Header">
-                  <stringProp name="Header.name">Accept-Language</stringProp>
-                  <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
-                </elementProp>
-                <elementProp name="Priority" elementType="Header">
-                  <stringProp name="Header.name">Priority</stringProp>
-                  <stringProp name="Header.value">u=4</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Encoding" elementType="Header">
-                  <stringProp name="Header.name">Accept-Encoding</stringProp>
-                  <stringProp name="Header.value">gzip, deflate</stringProp>
-                </elementProp>
-                <elementProp name="Disable-WWW-Authenticate" elementType="Header">
-                  <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
-                  <stringProp name="Header.value">true</stringProp>
-                </elementProp>
-                <elementProp name="User-Agent" elementType="Header">
-                  <stringProp name="Header.name">User-Agent</stringProp>
-                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
-                </elementProp>
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET patient" enabled="false">
-            <stringProp name="HTTPSampler.domain">${host}</stringProp>
-            <stringProp name="HTTPSampler.port">0</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/fhir2/R4/Patient/${patient_uuid}</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="_summary" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.name">_summary</stringProp>
-                  <stringProp name="Argument.value">data</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Referer" elementType="Header">
-                  <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Language" elementType="Header">
-                  <stringProp name="Header.name">Accept-Language</stringProp>
-                  <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
-                </elementProp>
-                <elementProp name="Priority" elementType="Header">
-                  <stringProp name="Header.name">Priority</stringProp>
-                  <stringProp name="Header.value">u=4</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Encoding" elementType="Header">
-                  <stringProp name="Header.name">Accept-Encoding</stringProp>
-                  <stringProp name="Header.value">gzip, deflate</stringProp>
-                </elementProp>
-                <elementProp name="User-Agent" elementType="Header">
-                  <stringProp name="Header.name">User-Agent</stringProp>
-                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
-                </elementProp>
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET location" enabled="false">
-            <stringProp name="HTTPSampler.domain">${host}</stringProp>
-            <stringProp name="HTTPSampler.port">0</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/location</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="tag" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                  <stringProp name="Argument.name">tag</stringProp>
-                  <stringProp name="Argument.value">Visit Location</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Referer" elementType="Header">
-                  <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Language" elementType="Header">
-                  <stringProp name="Header.name">Accept-Language</stringProp>
-                  <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
-                </elementProp>
-                <elementProp name="Priority" elementType="Header">
-                  <stringProp name="Header.name">Priority</stringProp>
-                  <stringProp name="Header.value">u=4</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Encoding" elementType="Header">
-                  <stringProp name="Header.name">Accept-Encoding</stringProp>
-                  <stringProp name="Header.value">gzip, deflate</stringProp>
-                </elementProp>
-                <elementProp name="Disable-WWW-Authenticate" elementType="Header">
-                  <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
-                  <stringProp name="Header.value">true</stringProp>
-                </elementProp>
-                <elementProp name="User-Agent" elementType="Header">
-                  <stringProp name="Header.name">User-Agent</stringProp>
-                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
-                </elementProp>
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET visittype" enabled="false">
-            <stringProp name="HTTPSampler.domain">${host}</stringProp>
-            <stringProp name="HTTPSampler.port">0</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/visittype</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Referer" elementType="Header">
-                  <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Language" elementType="Header">
-                  <stringProp name="Header.name">Accept-Language</stringProp>
-                  <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
-                </elementProp>
-                <elementProp name="Priority" elementType="Header">
-                  <stringProp name="Header.name">Priority</stringProp>
-                  <stringProp name="Header.value">u=4</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Encoding" elementType="Header">
-                  <stringProp name="Header.name">Accept-Encoding</stringProp>
-                  <stringProp name="Header.value">gzip, deflate</stringProp>
-                </elementProp>
-                <elementProp name="Disable-WWW-Authenticate" elementType="Header">
-                  <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
-                  <stringProp name="Header.value">true</stringProp>
-                </elementProp>
-                <elementProp name="User-Agent" elementType="Header">
-                  <stringProp name="Header.name">User-Agent</stringProp>
-                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
-                </elementProp>
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-          </hashTree>
-          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor - startDatetime" enabled="false">
-            <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="script">import java.time.*
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET idgen/identifiersource">
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">0</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/idgen/identifiersource?v=default</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=4</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Disable-WWW-Authenticate" elementType="Header">
+                <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
+                <stringProp name="Header.value">true</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract idgen_source_uuid">
+            <stringProp name="JSONPostProcessor.referenceNames">idgen_source_uuid</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.results[0].uuid</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">SOURCE_NOT_FOUND</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST idgen/identifiersource">
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">0</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/idgen/identifiersource/${idgen_source_uuid}/identifier</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=0</stringProp>
+              </elementProp>
+              <elementProp name="Disable-WWW-Authenticate" elementType="Header">
+                <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
+                <stringProp name="Header.value">true</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Content-type" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract identifier">
+            <stringProp name="JSONPostProcessor.referenceNames">identifier_uuid</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.[&apos;identifier&apos;]</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST patient (create patient)">
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">0</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/patient</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;person&quot;:{&quot;names&quot;:[{&quot;preferred&quot;:true,&quot;givenName&quot;:&quot;Richard&quot;,&quot;middleName&quot;:&quot;&quot;,&quot;familyName&quot;:&quot;Damian Rojas&quot;}],&quot;gender&quot;:&quot;M&quot;,&quot;birthdate&quot;:&quot;2026-3-14&quot;,&quot;birthdateEstimated&quot;:false,&quot;attributes&quot;:[],&quot;addresses&quot;:[{&quot;country&quot;:&quot;PERU&quot;,&quot;stateProvince&quot;:&quot;MAYNAS&quot;,&quot;address1&quot;:&quot;LORETO&quot;}],&quot;dead&quot;:false},&quot;identifiers&quot;:[{&quot;identifier&quot;:&quot;78986529&quot;,&quot;identifierType&quot;:&quot;${dni_type_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;preferred&quot;:true},{&quot;identifier&quot;:&quot;${identifier_uuid}&quot;,&quot;identifierType&quot;:&quot;${hc_type_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;preferred&quot;:false}]}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=0</stringProp>
+              </elementProp>
+              <elementProp name="Disable-WWW-Authenticate" elementType="Header">
+                <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
+                <stringProp name="Header.value">true</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Content-type" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract Patient UUID">
+            <stringProp name="JSONPostProcessor.referenceNames">patient_uuid</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.[&apos;uuid&apos;]</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET person" enabled="true">
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">0</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/person/${patient_uuid}</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="v" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">v</stringProp>
+                <stringProp name="Argument.value">custom:(causeOfDeath:(display),causeOfDeathNonCoded)</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=4</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Disable-WWW-Authenticate" elementType="Header">
+                <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
+                <stringProp name="Header.value">true</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET patient">
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">0</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/openmrs/ws/fhir2/R4/Patient/${patient_uuid}</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="_summary" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">_summary</stringProp>
+                <stringProp name="Argument.value">data</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=4</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET location">
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">0</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/location</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="tag" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">tag</stringProp>
+                <stringProp name="Argument.value">Visit Location</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=4</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Disable-WWW-Authenticate" elementType="Header">
+                <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
+                <stringProp name="Header.value">true</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET visittype">
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">0</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/visittype</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=4</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Disable-WWW-Authenticate" elementType="Header">
+                <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
+                <stringProp name="Header.value">true</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor - startDatetime">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import java.time.*
 import java.time.format.DateTimeFormatter
 
 def now = Instant.now()
@@ -581,195 +632,195 @@ def formatter = DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd&apos;T&apos;HH:mm:s
     .withZone(ZoneOffset.UTC)
 
 vars.put(&quot;startDatetime&quot;, formatter.format(now))</stringProp>
-            <stringProp name="scriptLanguage">groovy</stringProp>
-          </JSR223PreProcessor>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223PreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST visit" enabled="true">
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">0</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/visit</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;visitType&quot;:&quot;${visitType_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;startDatetime&quot;:&quot;${startDatetime}&quot;,&quot;stopDatetime&quot;:null,&quot;patient&quot;:&quot;${patient_uuid}&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=0</stringProp>
+              </elementProp>
+              <elementProp name="Disable-WWW-Authenticate" elementType="Header">
+                <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
+                <stringProp name="Header.value">true</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Content-type" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
           <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST visit" enabled="false">
-            <stringProp name="HTTPSampler.domain">${host}</stringProp>
-            <stringProp name="HTTPSampler.port">0</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/visit</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;visitType&quot;:&quot;${visitType_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;startDatetime&quot;:&quot;${startDatetime}&quot;,&quot;stopDatetime&quot;:null,&quot;patient&quot;:&quot;${patient_uuid}&quot;}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Referer" elementType="Header">
-                  <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Language" elementType="Header">
-                  <stringProp name="Header.name">Accept-Language</stringProp>
-                  <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
-                </elementProp>
-                <elementProp name="Origin" elementType="Header">
-                  <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe</stringProp>
-                </elementProp>
-                <elementProp name="Priority" elementType="Header">
-                  <stringProp name="Header.name">Priority</stringProp>
-                  <stringProp name="Header.value">u=0</stringProp>
-                </elementProp>
-                <elementProp name="Disable-WWW-Authenticate" elementType="Header">
-                  <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
-                  <stringProp name="Header.value">true</stringProp>
-                </elementProp>
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="Content-type" elementType="Header">
-                  <stringProp name="Header.name">Content-type</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Encoding" elementType="Header">
-                  <stringProp name="Header.name">Accept-Encoding</stringProp>
-                  <stringProp name="Header.value">gzip, deflate</stringProp>
-                </elementProp>
-                <elementProp name="User-Agent" elementType="Header">
-                  <stringProp name="Header.name">User-Agent</stringProp>
-                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract Visit UUID" enabled="true">
-              <stringProp name="JSONPostProcessor.referenceNames">visit_uuid</stringProp>
-              <stringProp name="JSONPostProcessor.jsonPathExprs">$.[&apos;uuid&apos;]</stringProp>
-              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
-            </JSONPostProcessor>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET forms" enabled="false">
-            <stringProp name="HTTPSampler.domain">${host}</stringProp>
-            <stringProp name="HTTPSampler.port">0</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/o3/forms/${form_uuid}</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Referer" elementType="Header">
-                  <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Language" elementType="Header">
-                  <stringProp name="Header.name">Accept-Language</stringProp>
-                  <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
-                </elementProp>
-                <elementProp name="Priority" elementType="Header">
-                  <stringProp name="Header.name">Priority</stringProp>
-                  <stringProp name="Header.value">u=4</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Encoding" elementType="Header">
-                  <stringProp name="Header.name">Accept-Encoding</stringProp>
-                  <stringProp name="Header.value">gzip, deflate</stringProp>
-                </elementProp>
-                <elementProp name="Disable-WWW-Authenticate" elementType="Header">
-                  <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
-                  <stringProp name="Header.value">true</stringProp>
-                </elementProp>
-                <elementProp name="User-Agent" elementType="Header">
-                  <stringProp name="Header.name">User-Agent</stringProp>
-                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
-                </elementProp>
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST forms" enabled="false">
-            <stringProp name="HTTPSampler.domain">${host}</stringProp>
-            <stringProp name="HTTPSampler.port">0</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/encounter?v=custom:(uuid,encounterDatetime,encounterType:(uuid,name,description),location:(uuid,name),patient:(uuid,display),encounterProviders:(uuid,provider:(uuid,name),encounterRole:(uuid,name)),orders:(uuid,display,concept:(uuid,display),voided),diagnoses:(uuid,certainty,condition,formFieldPath,formFieldNamespace,display,rank,voided,diagnosis:(coded:(uuid,display))),obs:(uuid,obsDatetime,comment,voided,groupMembers,formFieldNamespace,formFieldPath,concept:(uuid,name:(uuid,name)),value:(uuid,name:(uuid,name),names:(uuid,conceptNameType,name))))</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;patient&quot;:&quot;${patient_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;encounterType&quot;:&quot;a990eabc-3405-419f-bfb1-96ca2d8279b8&quot;,&quot;encounterProviders&quot;:[{&quot;provider&quot;:&quot;54997cc8-2365-4ad1-99f4-6dfc4cf36132&quot;,&quot;encounterRole&quot;:&quot;240b26f9-dd88-4172-823d-4a8bfeb7841f&quot;}],&quot;obs&quot;:[{&quot;value&quot;:&quot;8df41ac3-214c-4eb8-95f7-55ae0456d0d0&quot;,&quot;concept&quot;:&quot;ecc332d2-6ca1-4238-ac14-d0de521bdb11&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-subtestsCoordinacióN&quot;},{&quot;value&quot;:&quot;0e785fdd-db0c-4ff9-8d24-3a2264081f27&quot;,&quot;concept&quot;:&quot;736e8857-21c8-4c11-b9f1-e154f64bfff2&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-reconoceGrandeYChico(Lam.6)&quot;},{&quot;value&quot;:&quot;1e9aee82-d6cc-4178-bdb2-96bb849e1737&quot;,&quot;concept&quot;:&quot;0facbe63-2b6a-4cab-bfe8-aa618e797df0&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-reconoceMáSYMenos(Lam.7)&quot;},{&quot;value&quot;:&quot;c42d218d-619d-4598-a371-550e5b383035&quot;,&quot;concept&quot;:&quot;cfe1cc7b-8917-4f0e-ab57-406a14a2c8e8&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-nombraAnimales(Lam.8)&quot;},{&quot;value&quot;:&quot;6ee9174e-da0b-4c4b-8d2a-bd0cabb490e0&quot;,&quot;concept&quot;:&quot;cfe1cc7b-8917-4f0e-ab57-406a14a2c8e8&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-nombraAnimales(Lam.8)&quot;},{&quot;value&quot;:&quot;8ea70651-21a2-477d-8abd-dd7f9258734a&quot;,&quot;concept&quot;:&quot;cfe1cc7b-8917-4f0e-ab57-406a14a2c8e8&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-nombraAnimales(Lam.8)&quot;}],&quot;form&quot;:{&quot;uuid&quot;:&quot;${form_uuid}&quot;},&quot;visit&quot;:&quot;${visit_uuid}&quot;,&quot;orders&quot;:[],&quot;diagnoses&quot;:[]}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Referer" elementType="Header">
-                  <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Language" elementType="Header">
-                  <stringProp name="Header.name">Accept-Language</stringProp>
-                  <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
-                </elementProp>
-                <elementProp name="Origin" elementType="Header">
-                  <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe</stringProp>
-                </elementProp>
-                <elementProp name="Priority" elementType="Header">
-                  <stringProp name="Header.name">Priority</stringProp>
-                  <stringProp name="Header.value">u=0</stringProp>
-                </elementProp>
-                <elementProp name="Disable-WWW-Authenticate" elementType="Header">
-                  <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
-                  <stringProp name="Header.value">true</stringProp>
-                </elementProp>
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="Content-Type" elementType="Header">
-                  <stringProp name="Header.name">Content-Type</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Encoding" elementType="Header">
-                  <stringProp name="Header.name">Accept-Encoding</stringProp>
-                  <stringProp name="Header.value">gzip, deflate</stringProp>
-                </elementProp>
-                <elementProp name="User-Agent" elementType="Header">
-                  <stringProp name="Header.name">User-Agent</stringProp>
-                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-          </hashTree>
-          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor - encounterDatetime" enabled="false">
-            <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="script">import java.time.*
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract Visit UUID" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">visit_uuid</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.[&apos;uuid&apos;]</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET forms" enabled="true">
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">0</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/o3/forms/${form_uuid}</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=4</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="Disable-WWW-Authenticate" elementType="Header">
+                <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
+                <stringProp name="Header.value">true</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST forms" enabled="true">
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">0</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/encounter?v=custom:(uuid,encounterDatetime,encounterType:(uuid,name,description),location:(uuid,name),patient:(uuid,display),encounterProviders:(uuid,provider:(uuid,name),encounterRole:(uuid,name)),orders:(uuid,display,concept:(uuid,display),voided),diagnoses:(uuid,certainty,condition,formFieldPath,formFieldNamespace,display,rank,voided,diagnosis:(coded:(uuid,display))),obs:(uuid,obsDatetime,comment,voided,groupMembers,formFieldNamespace,formFieldPath,concept:(uuid,name:(uuid,name)),value:(uuid,name:(uuid,name),names:(uuid,conceptNameType,name))))</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;patient&quot;:&quot;${patient_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;encounterType&quot;:&quot;a990eabc-3405-419f-bfb1-96ca2d8279b8&quot;,&quot;encounterProviders&quot;:[{&quot;provider&quot;:&quot;54997cc8-2365-4ad1-99f4-6dfc4cf36132&quot;,&quot;encounterRole&quot;:&quot;240b26f9-dd88-4172-823d-4a8bfeb7841f&quot;}],&quot;obs&quot;:[{&quot;value&quot;:&quot;8df41ac3-214c-4eb8-95f7-55ae0456d0d0&quot;,&quot;concept&quot;:&quot;ecc332d2-6ca1-4238-ac14-d0de521bdb11&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-subtestsCoordinacióN&quot;},{&quot;value&quot;:&quot;0e785fdd-db0c-4ff9-8d24-3a2264081f27&quot;,&quot;concept&quot;:&quot;736e8857-21c8-4c11-b9f1-e154f64bfff2&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-reconoceGrandeYChico(Lam.6)&quot;},{&quot;value&quot;:&quot;1e9aee82-d6cc-4178-bdb2-96bb849e1737&quot;,&quot;concept&quot;:&quot;0facbe63-2b6a-4cab-bfe8-aa618e797df0&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-reconoceMáSYMenos(Lam.7)&quot;},{&quot;value&quot;:&quot;c42d218d-619d-4598-a371-550e5b383035&quot;,&quot;concept&quot;:&quot;cfe1cc7b-8917-4f0e-ab57-406a14a2c8e8&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-nombraAnimales(Lam.8)&quot;},{&quot;value&quot;:&quot;6ee9174e-da0b-4c4b-8d2a-bd0cabb490e0&quot;,&quot;concept&quot;:&quot;cfe1cc7b-8917-4f0e-ab57-406a14a2c8e8&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-nombraAnimales(Lam.8)&quot;},{&quot;value&quot;:&quot;8ea70651-21a2-477d-8abd-dd7f9258734a&quot;,&quot;concept&quot;:&quot;cfe1cc7b-8917-4f0e-ab57-406a14a2c8e8&quot;,&quot;formFieldNamespace&quot;:&quot;rfe-forms&quot;,&quot;formFieldPath&quot;:&quot;rfe-forms-nombraAnimales(Lam.8)&quot;}],&quot;form&quot;:{&quot;uuid&quot;:&quot;${form_uuid}&quot;},&quot;visit&quot;:&quot;${visit_uuid}&quot;,&quot;orders&quot;:[],&quot;diagnoses&quot;:[]}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=0</stringProp>
+              </elementProp>
+              <elementProp name="Disable-WWW-Authenticate" elementType="Header">
+                <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
+                <stringProp name="Header.value">true</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor - encounterDatetime" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import java.time.*
 import java.time.format.DateTimeFormatter
 
 def now = Instant.now()
@@ -777,272 +828,272 @@ def formatter = DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd&apos;T&apos;HH:mm:s
     .withZone(ZoneOffset.UTC)
 
 vars.put(&quot;encounterDatetime&quot;, formatter.format(now))</stringProp>
-            <stringProp name="scriptLanguage">groovy</stringProp>
-          </JSR223PreProcessor>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223PreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST encounter (set orders)" enabled="true">
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">0</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/encounter</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;patient&quot;:&quot;${patient_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;encounterType&quot;:&quot;39da3525-afe4-45ff-8977-c53b7b359158&quot;,&quot;encounterDatetime&quot;:&quot;${encounterDatetime}&quot;,&quot;visit&quot;:&quot;${visit_uuid}&quot;,&quot;obs&quot;:[],&quot;orders&quot;:[{&quot;action&quot;:&quot;NEW&quot;,&quot;patient&quot;:&quot;${patient_uuid}&quot;,&quot;type&quot;:&quot;drugorder&quot;,&quot;careSetting&quot;:&quot;6f0c9a92-6f24-11e3-af88-005056821db0&quot;,&quot;orderer&quot;:&quot;fc23b972-88bd-4b18-9de7-2249cc0ad3f5&quot;,&quot;encounter&quot;:null,&quot;drug&quot;:&quot;fea1180e-c138-4d37-a5c0-4b964cb00808&quot;,&quot;dose&quot;:1,&quot;doseUnits&quot;:&quot;1bf39dc2-bf7e-40b8-931c-9b634b8db71c&quot;,&quot;route&quot;:&quot;bde472ba-b68c-49fb-a294-ea5ff387998e&quot;,&quot;frequency&quot;:&quot;136ebdb7-e989-47cf-8ec2-4e8b2ffe0ab3&quot;,&quot;asNeeded&quot;:false,&quot;asNeededCondition&quot;:&quot;&quot;,&quot;numRefills&quot;:0,&quot;quantity&quot;:10,&quot;quantityUnits&quot;:&quot;1bf39dc2-bf7e-40b8-931c-9b634b8db71c&quot;,&quot;duration&quot;:1,&quot;durationUnits&quot;:&quot;1072AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;,&quot;dosingType&quot;:&quot;org.openmrs.SimpleDosingInstructions&quot;,&quot;dosingInstructions&quot;:&quot;&quot;,&quot;concept&quot;:&quot;de7e14ab-8a52-47b6-9a91-1df36b16322d&quot;,&quot;orderReasonNonCoded&quot;:&quot;Tomar una cápsula cada doce horas durante cinco días para tratar la infección.&quot;}]}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=0</stringProp>
+              </elementProp>
+              <elementProp name="Disable-WWW-Authenticate" elementType="Header">
+                <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
+                <stringProp name="Header.value">true</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
           <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST encounter (set orders)" enabled="false">
-            <stringProp name="HTTPSampler.domain">${host}</stringProp>
-            <stringProp name="HTTPSampler.port">0</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/encounter</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;patient&quot;:&quot;${patient_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;encounterType&quot;:&quot;39da3525-afe4-45ff-8977-c53b7b359158&quot;,&quot;encounterDatetime&quot;:&quot;${encounterDatetime}&quot;,&quot;visit&quot;:&quot;${visit_uuid}&quot;,&quot;obs&quot;:[],&quot;orders&quot;:[{&quot;action&quot;:&quot;NEW&quot;,&quot;patient&quot;:&quot;${patient_uuid}&quot;,&quot;type&quot;:&quot;drugorder&quot;,&quot;careSetting&quot;:&quot;6f0c9a92-6f24-11e3-af88-005056821db0&quot;,&quot;orderer&quot;:&quot;fc23b972-88bd-4b18-9de7-2249cc0ad3f5&quot;,&quot;encounter&quot;:null,&quot;drug&quot;:&quot;fea1180e-c138-4d37-a5c0-4b964cb00808&quot;,&quot;dose&quot;:1,&quot;doseUnits&quot;:&quot;1bf39dc2-bf7e-40b8-931c-9b634b8db71c&quot;,&quot;route&quot;:&quot;bde472ba-b68c-49fb-a294-ea5ff387998e&quot;,&quot;frequency&quot;:&quot;136ebdb7-e989-47cf-8ec2-4e8b2ffe0ab3&quot;,&quot;asNeeded&quot;:false,&quot;asNeededCondition&quot;:&quot;&quot;,&quot;numRefills&quot;:0,&quot;quantity&quot;:10,&quot;quantityUnits&quot;:&quot;1bf39dc2-bf7e-40b8-931c-9b634b8db71c&quot;,&quot;duration&quot;:1,&quot;durationUnits&quot;:&quot;1072AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;,&quot;dosingType&quot;:&quot;org.openmrs.SimpleDosingInstructions&quot;,&quot;dosingInstructions&quot;:&quot;&quot;,&quot;concept&quot;:&quot;de7e14ab-8a52-47b6-9a91-1df36b16322d&quot;,&quot;orderReasonNonCoded&quot;:&quot;Tomar una cápsula cada doce horas durante cinco días para tratar la infección.&quot;}]}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Referer" elementType="Header">
-                  <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Language" elementType="Header">
-                  <stringProp name="Header.name">Accept-Language</stringProp>
-                  <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
-                </elementProp>
-                <elementProp name="Origin" elementType="Header">
-                  <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe</stringProp>
-                </elementProp>
-                <elementProp name="Priority" elementType="Header">
-                  <stringProp name="Header.name">Priority</stringProp>
-                  <stringProp name="Header.value">u=0</stringProp>
-                </elementProp>
-                <elementProp name="Disable-WWW-Authenticate" elementType="Header">
-                  <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
-                  <stringProp name="Header.value">true</stringProp>
-                </elementProp>
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="Content-Type" elementType="Header">
-                  <stringProp name="Header.name">Content-Type</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Encoding" elementType="Header">
-                  <stringProp name="Header.name">Accept-Encoding</stringProp>
-                  <stringProp name="Header.value">gzip, deflate</stringProp>
-                </elementProp>
-                <elementProp name="User-Agent" elementType="Header">
-                  <stringProp name="Header.name">User-Agent</stringProp>
-                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST encounter" enabled="false">
-            <stringProp name="HTTPSampler.domain">${host}</stringProp>
-            <stringProp name="HTTPSampler.port">0</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/encounter</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;form&quot;:&quot;${encounter_form_uuid}&quot;,&quot;patient&quot;:&quot;${patient_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;encounterProviders&quot;:[{&quot;encounterRole&quot;:&quot;240b26f9-dd88-4172-823d-4a8bfeb7841f&quot;,&quot;provider&quot;:&quot;fc23b972-88bd-4b18-9de7-2249cc0ad3f5&quot;}],&quot;encounterType&quot;:&quot;d7151f82-c1f3-4152-a605-2f9ea7414a79&quot;,&quot;obs&quot;:[{&quot;concept&quot;:{&quot;uuid&quot;:&quot;162169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;,&quot;display&quot;:&quot;&quot;},&quot;value&quot;:&quot;Paciente con diagnóstico de SIDA, presenta traumatismo de nerviosa cervical, se recomienda evaluación neurológica urgente y manejo adecuado del dolor.&quot;}]}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Referer" elementType="Header">
-                  <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Language" elementType="Header">
-                  <stringProp name="Header.name">Accept-Language</stringProp>
-                  <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
-                </elementProp>
-                <elementProp name="Origin" elementType="Header">
-                  <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe</stringProp>
-                </elementProp>
-                <elementProp name="Priority" elementType="Header">
-                  <stringProp name="Header.name">Priority</stringProp>
-                  <stringProp name="Header.value">u=0</stringProp>
-                </elementProp>
-                <elementProp name="Disable-WWW-Authenticate" elementType="Header">
-                  <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
-                  <stringProp name="Header.value">true</stringProp>
-                </elementProp>
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="Content-Type" elementType="Header">
-                  <stringProp name="Header.name">Content-Type</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Encoding" elementType="Header">
-                  <stringProp name="Header.name">Accept-Encoding</stringProp>
-                  <stringProp name="Header.value">gzip, deflate</stringProp>
-                </elementProp>
-                <elementProp name="User-Agent" elementType="Header">
-                  <stringProp name="Header.name">User-Agent</stringProp>
-                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract Encounter UUID" enabled="true">
-              <stringProp name="JSONPostProcessor.referenceNames">encounter_uuid</stringProp>
-              <stringProp name="JSONPostProcessor.jsonPathExprs">$.[&apos;uuid&apos;]</stringProp>
-              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
-            </JSONPostProcessor>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST patientdiagnoses (rank 1)" enabled="false">
-            <stringProp name="HTTPSampler.domain">${host}</stringProp>
-            <stringProp name="HTTPSampler.port">0</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/patientdiagnoses</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;encounter&quot;:&quot;${encounter_uuid}&quot;,&quot;patient&quot;:&quot;${patient_uuid}&quot;,&quot;condition&quot;:null,&quot;diagnosis&quot;:{&quot;coded&quot;:&quot;${diagnosis_first_uuid}&quot;},&quot;certainty&quot;:&quot;PROVISIONAL&quot;,&quot;rank&quot;:1}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Referer" elementType="Header">
-                  <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Language" elementType="Header">
-                  <stringProp name="Header.name">Accept-Language</stringProp>
-                  <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
-                </elementProp>
-                <elementProp name="Origin" elementType="Header">
-                  <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe</stringProp>
-                </elementProp>
-                <elementProp name="Priority" elementType="Header">
-                  <stringProp name="Header.name">Priority</stringProp>
-                  <stringProp name="Header.value">u=4</stringProp>
-                </elementProp>
-                <elementProp name="Disable-WWW-Authenticate" elementType="Header">
-                  <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
-                  <stringProp name="Header.value">true</stringProp>
-                </elementProp>
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="Content-Type" elementType="Header">
-                  <stringProp name="Header.name">Content-Type</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Encoding" elementType="Header">
-                  <stringProp name="Header.name">Accept-Encoding</stringProp>
-                  <stringProp name="Header.value">gzip, deflate</stringProp>
-                </elementProp>
-                <elementProp name="User-Agent" elementType="Header">
-                  <stringProp name="Header.name">User-Agent</stringProp>
-                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST patientdiagnoses (rank 2)" enabled="false">
-            <stringProp name="HTTPSampler.domain">${host}</stringProp>
-            <stringProp name="HTTPSampler.port">0</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/patientdiagnoses</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;encounter&quot;:&quot;${encounter_uuid}&quot;,&quot;patient&quot;:&quot;${patient_uuid}&quot;,&quot;condition&quot;:null,&quot;diagnosis&quot;:{&quot;coded&quot;:&quot;${diagnosis_second_uuid}&quot;},&quot;certainty&quot;:&quot;PROVISIONAL&quot;,&quot;rank&quot;:2}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Referer" elementType="Header">
-                  <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Language" elementType="Header">
-                  <stringProp name="Header.name">Accept-Language</stringProp>
-                  <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
-                </elementProp>
-                <elementProp name="Origin" elementType="Header">
-                  <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe</stringProp>
-                </elementProp>
-                <elementProp name="Priority" elementType="Header">
-                  <stringProp name="Header.name">Priority</stringProp>
-                  <stringProp name="Header.value">u=4</stringProp>
-                </elementProp>
-                <elementProp name="Disable-WWW-Authenticate" elementType="Header">
-                  <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
-                  <stringProp name="Header.value">true</stringProp>
-                </elementProp>
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="Content-Type" elementType="Header">
-                  <stringProp name="Header.name">Content-Type</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Encoding" elementType="Header">
-                  <stringProp name="Header.name">Accept-Encoding</stringProp>
-                  <stringProp name="Header.value">gzip, deflate</stringProp>
-                </elementProp>
-                <elementProp name="User-Agent" elementType="Header">
-                  <stringProp name="Header.name">User-Agent</stringProp>
-                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-          </hashTree>
-          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor - stopDatetime" enabled="false">
-            <stringProp name="scriptLanguage">groovy</stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="script">import java.time.*
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST encounter" enabled="true">
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">0</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/encounter</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;form&quot;:&quot;${encounter_form_uuid}&quot;,&quot;patient&quot;:&quot;${patient_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;encounterProviders&quot;:[{&quot;encounterRole&quot;:&quot;240b26f9-dd88-4172-823d-4a8bfeb7841f&quot;,&quot;provider&quot;:&quot;fc23b972-88bd-4b18-9de7-2249cc0ad3f5&quot;}],&quot;encounterType&quot;:&quot;d7151f82-c1f3-4152-a605-2f9ea7414a79&quot;,&quot;obs&quot;:[{&quot;concept&quot;:{&quot;uuid&quot;:&quot;162169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;,&quot;display&quot;:&quot;&quot;},&quot;value&quot;:&quot;Paciente con diagnóstico de SIDA, presenta traumatismo de nerviosa cervical, se recomienda evaluación neurológica urgente y manejo adecuado del dolor.&quot;}]}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=0</stringProp>
+              </elementProp>
+              <elementProp name="Disable-WWW-Authenticate" elementType="Header">
+                <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
+                <stringProp name="Header.value">true</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract Encounter UUID" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">encounter_uuid</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.[&apos;uuid&apos;]</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST patientdiagnoses (rank 1)" enabled="true">
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">0</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/patientdiagnoses</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;encounter&quot;:&quot;${encounter_uuid}&quot;,&quot;patient&quot;:&quot;${patient_uuid}&quot;,&quot;condition&quot;:null,&quot;diagnosis&quot;:{&quot;coded&quot;:&quot;${diagnosis_first_uuid}&quot;},&quot;certainty&quot;:&quot;PROVISIONAL&quot;,&quot;rank&quot;:1}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=4</stringProp>
+              </elementProp>
+              <elementProp name="Disable-WWW-Authenticate" elementType="Header">
+                <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
+                <stringProp name="Header.value">true</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST patientdiagnoses (rank 2)" enabled="true">
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">0</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/patientdiagnoses</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;encounter&quot;:&quot;${encounter_uuid}&quot;,&quot;patient&quot;:&quot;${patient_uuid}&quot;,&quot;condition&quot;:null,&quot;diagnosis&quot;:{&quot;coded&quot;:&quot;${diagnosis_second_uuid}&quot;},&quot;certainty&quot;:&quot;PROVISIONAL&quot;,&quot;rank&quot;:2}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=4</stringProp>
+              </elementProp>
+              <elementProp name="Disable-WWW-Authenticate" elementType="Header">
+                <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
+                <stringProp name="Header.value">true</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor - stopDatetime" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">import java.time.*
 import java.time.format.DateTimeFormatter
 
 def now = Instant.now()
@@ -1050,172 +1101,173 @@ def formatter = DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd&apos;T&apos;HH:mm:s
     .withZone(ZoneOffset.UTC)
 
 vars.put(&quot;stopDatetime&quot;, formatter.format(now))</stringProp>
-          </JSR223PreProcessor>
-          <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST visit (end)" enabled="false">
-            <stringProp name="HTTPSampler.domain">${host}</stringProp>
-            <stringProp name="HTTPSampler.port">0</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/visit/${visit_uuid}</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;stopDatetime&quot;:&quot;${stopDatetime}&quot;}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Referer" elementType="Header">
-                  <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Language" elementType="Header">
-                  <stringProp name="Header.name">Accept-Language</stringProp>
-                  <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
-                </elementProp>
-                <elementProp name="Origin" elementType="Header">
-                  <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe</stringProp>
-                </elementProp>
-                <elementProp name="Priority" elementType="Header">
-                  <stringProp name="Header.name">Priority</stringProp>
-                  <stringProp name="Header.value">u=0</stringProp>
-                </elementProp>
-                <elementProp name="Disable-WWW-Authenticate" elementType="Header">
-                  <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
-                  <stringProp name="Header.value">true</stringProp>
-                </elementProp>
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="Content-type" elementType="Header">
-                  <stringProp name="Header.name">Content-type</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Encoding" elementType="Header">
-                  <stringProp name="Header.name">Accept-Encoding</stringProp>
-                  <stringProp name="Header.value">gzip, deflate</stringProp>
-                </elementProp>
-                <elementProp name="User-Agent" elementType="Header">
-                  <stringProp name="Header.name">User-Agent</stringProp>
-                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST encounter (set DISCONTINUE to order)" enabled="false">
-            <stringProp name="HTTPSampler.domain">${host}</stringProp>
-            <stringProp name="HTTPSampler.port">0</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/encounter</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;patient&quot;:&quot;6686b5b6-b8df-4596-90c3-d0321cc0e728&quot;,&quot;location&quot;:&quot;35d2234e-129a-4c40-abb2-1ae0b2400001&quot;,&quot;encounterType&quot;:&quot;39da3525-afe4-45ff-8977-c53b7b359158&quot;,&quot;encounterDatetime&quot;:&quot;2026-03-16T20:53:00.000Z&quot;,&quot;visit&quot;:&quot;5f64d667-e0f4-46dc-8169-fc16a8410872&quot;,&quot;obs&quot;:[],&quot;orders&quot;:[{&quot;action&quot;:&quot;DISCONTINUE&quot;,&quot;type&quot;:&quot;drugorder&quot;,&quot;previousOrder&quot;:&quot;c4103fa7-99ee-4440-a359-405cbc6a08c4&quot;,&quot;patient&quot;:&quot;6686b5b6-b8df-4596-90c3-d0321cc0e728&quot;,&quot;careSetting&quot;:&quot;6f0c9a92-6f24-11e3-af88-005056821db0&quot;,&quot;encounter&quot;:null,&quot;orderer&quot;:&quot;fc23b972-88bd-4b18-9de7-2249cc0ad3f5&quot;,&quot;concept&quot;:&quot;de7e14ab-8a52-47b6-9a91-1df36b16322d&quot;,&quot;drug&quot;:&quot;7840c95c-92c2-42c9-b56c-ddda19b00807&quot;,&quot;orderReasonNonCoded&quot;:null}]}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Referer" elementType="Header">
-                  <stringProp name="Header.name">Referer</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Orders</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Language" elementType="Header">
-                  <stringProp name="Header.name">Accept-Language</stringProp>
-                  <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
-                </elementProp>
-                <elementProp name="Origin" elementType="Header">
-                  <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe</stringProp>
-                </elementProp>
-                <elementProp name="Priority" elementType="Header">
-                  <stringProp name="Header.name">Priority</stringProp>
-                  <stringProp name="Header.value">u=0</stringProp>
-                </elementProp>
-                <elementProp name="Disable-WWW-Authenticate" elementType="Header">
-                  <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
-                  <stringProp name="Header.value">true</stringProp>
-                </elementProp>
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="Content-Type" elementType="Header">
-                  <stringProp name="Header.name">Content-Type</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Encoding" elementType="Header">
-                  <stringProp name="Header.name">Accept-Encoding</stringProp>
-                  <stringProp name="Header.value">gzip, deflate</stringProp>
-                </elementProp>
-                <elementProp name="User-Agent" elementType="Header">
-                  <stringProp name="Header.name">User-Agent</stringProp>
-                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-          </hashTree>
-          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
-            <boolProp name="ResultCollector.error_logging">false</boolProp>
-            <objProp>
-              <name>saveConfig</name>
-              <value class="SampleSaveConfiguration">
-                <time>true</time>
-                <latency>true</latency>
-                <timestamp>true</timestamp>
-                <success>true</success>
-                <label>true</label>
-                <code>true</code>
-                <message>true</message>
-                <threadName>true</threadName>
-                <dataType>true</dataType>
-                <encoding>false</encoding>
-                <assertions>true</assertions>
-                <subresults>true</subresults>
-                <responseData>false</responseData>
-                <samplerData>false</samplerData>
-                <xml>false</xml>
-                <fieldNames>true</fieldNames>
-                <responseHeaders>false</responseHeaders>
-                <requestHeaders>false</requestHeaders>
-                <responseDataOnError>false</responseDataOnError>
-                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-                <assertionsResultsToSave>0</assertionsResultsToSave>
-                <bytes>true</bytes>
-                <sentBytes>true</sentBytes>
-                <url>true</url>
-                <threadCounts>true</threadCounts>
-                <idleTime>true</idleTime>
-                <connectTime>true</connectTime>
-              </value>
-            </objProp>
-            <stringProp name="filename"></stringProp>
-          </ResultCollector>
+        </JSR223PreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST visit (end)" enabled="true">
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">0</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/visit/${visit_uuid}</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;stopDatetime&quot;:&quot;${stopDatetime}&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Patient%20Summary</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=0</stringProp>
+              </elementProp>
+              <elementProp name="Disable-WWW-Authenticate" elementType="Header">
+                <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
+                <stringProp name="Header.value">true</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Content-type" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
           <hashTree/>
         </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST encounter (set DISCONTINUE to order)" enabled="false">
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">0</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/openmrs/ws/rest/v1/encounter</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;patient&quot;:&quot;6686b5b6-b8df-4596-90c3-d0321cc0e728&quot;,&quot;location&quot;:&quot;35d2234e-129a-4c40-abb2-1ae0b2400001&quot;,&quot;encounterType&quot;:&quot;39da3525-afe4-45ff-8977-c53b7b359158&quot;,&quot;encounterDatetime&quot;:&quot;2026-03-16T20:53:00.000Z&quot;,&quot;visit&quot;:&quot;5f64d667-e0f4-46dc-8169-fc16a8410872&quot;,&quot;obs&quot;:[],&quot;orders&quot;:[{&quot;action&quot;:&quot;DISCONTINUE&quot;,&quot;type&quot;:&quot;drugorder&quot;,&quot;previousOrder&quot;:&quot;c4103fa7-99ee-4440-a359-405cbc6a08c4&quot;,&quot;patient&quot;:&quot;6686b5b6-b8df-4596-90c3-d0321cc0e728&quot;,&quot;careSetting&quot;:&quot;6f0c9a92-6f24-11e3-af88-005056821db0&quot;,&quot;encounter&quot;:null,&quot;orderer&quot;:&quot;fc23b972-88bd-4b18-9de7-2249cc0ad3f5&quot;,&quot;concept&quot;:&quot;de7e14ab-8a52-47b6-9a91-1df36b16322d&quot;,&quot;drug&quot;:&quot;7840c95c-92c2-42c9-b56c-ddda19b00807&quot;,&quot;orderReasonNonCoded&quot;:null}]}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe/openmrs/spa/patient/6686b5b6-b8df-4596-90c3-d0321cc0e728/chart/Orders</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">http://hii1sc-dev.inf.pucp.edu.pe</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=0</stringProp>
+              </elementProp>
+              <elementProp name="Disable-WWW-Authenticate" elementType="Header">
+                <stringProp name="Header.name">Disable-WWW-Authenticate</stringProp>
+                <stringProp name="Header.value">true</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <RecordingController guiclass="RecordController" testclass="RecordingController" testname="Recording Controller"/>
+        <hashTree/>
       </hashTree>
     </hashTree>
   </hashTree>
