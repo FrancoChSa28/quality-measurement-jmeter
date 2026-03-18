@@ -1,3 +1,110 @@
+## Creación de un paciente
+- Obtener los uuid de los tipos de identificadores `GET /openmrs/ws/rest/v1/patientidentifiertype?v=default`
+    - response
+    ```json
+    {
+        "results": [
+            {
+            "uuid": "05a29f94-c0ed-11e2-94be-8c13b969e334",  ← 🔑 ID de N° Historia Clínica
+            "display": "N° Historia Clínica",
+            "name": "N° Historia Clínica",
+            "description": "Identificador Unico Autogenerado para el HSC, con check-digit",
+            "format": null,
+            "formatDescription": null,
+            "required": true
+            },
+            {
+            "uuid": "550e8400-e29b-41d4-a716-446655440001", ← 🔑 ID de DNI
+            "display": "DNI",
+            "name": "DNI",
+            "description": "Documento Nacional de Identidad",
+            "format": "^[0-9]{8}$",
+            "formatDescription": "8 dígitos numéricos",
+            "required": false
+            }
+        ]
+    }
+    ```
+- Obtener el identifier uuid `GET /openmrs/ws/rest/v1/idgen/identifiersource?v=default`
+    - response
+    ```json
+    {
+        "results": [
+            {
+            "uuid": "8549f706-7e85-4c1d-9424-217d50a2988b",  ← 🔑 ID del Indentifier Source
+            "name": "Generator for peruHCE",
+            "description": "Generator for peruHCE",
+            "baseCharacterSet": "0123456789ACDEFGHJKLMNPRTUVWXY",
+            "prefix": null,
+            "suffix": null,
+            "firstIdentifierBase": "100000",
+            "minLength": 7,
+            "maxLength": 7,
+            "identifierType": {
+                "uuid": "05a29f94-c0ed-11e2-94be-8c13b969e334",  ← 🔑 ID de N° Historia Clínica
+                "display": "N° Historia Clínica",
+                "name": "N° Historia Clínica"
+            }
+            }
+        ]
+    }
+    ```
+- Obtener el identifier `POST /openmrs/ws/rest/v1/idgen/identifiersource/8549f706-7e85-4c1d-9424-217d50a2988b/identifier` ← 🔑 ID del Indentifier Source
+    - body
+    ```json
+    {}
+    ```
+    - response
+    ```json
+    {"identifier":"10000V6"}
+    ```
+- Crear paciente `POST /openmrs/ws/rest/v1/patient`
+    - body
+    ```json
+    {
+        "person": {
+            "names": [
+            {
+                "preferred": true,
+                "givenName": "Jose",
+                "middleName": "",
+                "familyName": "Quiroz Castilla"
+            }
+            ],
+            "gender": "M",
+            "birthdate": "2026-3-14",
+            "birthdateEstimated": false,
+            "attributes": [],
+            "addresses": [
+            {
+                "country": "PERU",
+                "stateProvince": "MAYNAS",
+                "address1": "LORETO"
+            }
+            ],
+            "dead": false
+        },
+        "identifiers": [
+            {
+            "identifier": "78986522",
+            "identifierType": "550e8400-e29b-41d4-a716-446655440001", ← 🔑 ID de DNI
+            "location": "35d2234e-129a-4c40-abb2-1ae0b2400002",
+            "preferred": true
+            },
+            {
+            "identifier": "${identifier_uuid}",
+            "identifierType": "05a29f94-c0ed-11e2-94be-8c13b969e334", ← 🔑 ID de N° Historia Clínica
+            "location": "35d2234e-129a-4c40-abb2-1ae0b2400002",
+            "preferred": false
+            }
+        ]
+    }
+    ```
+    - response
+    ```json
+    {"uuid": "44897-"}
+    ```
+
 ## Inicio de visita
 ### Información técnica
 - Obtener ubicación: `GET /openmrs/ws/rest/v1/location`
