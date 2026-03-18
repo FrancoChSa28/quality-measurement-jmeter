@@ -1,101 +1,101 @@
-givenName,middleName,familyName,gender,birthdate,birthdateEstimated,address1,cityVillage,stateProvince,country
-María Elena,Alejandra,Palomino Silva,F,1966-11-21,true,Av. Pacífico 345,Chimbote,Áncash,Peru
-Roberto Carlos,Ernesto,Reyes Sánchez,M,1966-06-23,false,Calle Los Pinos 789,Miraflores,Lima,Peru
-Ximena Soledad,Cecilia,Condori Apaza,F,1966-09-30,false,Jr. Carabaya 321,Lima,Lima,Peru
-Rafael Eduardo,Ignacio,Núñez Medina,M,1993-04-29,true,Av. Centenario 678,Pucallpa,Ucayali,Peru
-Víctor Hugo,Humberto,Vega Herrera,M,1958-06-27,false,Jr. Lima 123,Cusco,Cusco,Peru
-Patricia Sofía,Lorena,Pacheco Tapia,F,1992-02-28,false,Jr. Huallaga 456,Lima,Lima,Peru
-Claudia Beatriz,Lorena,Flores Chávez,F,2022-10-18,false,Av. Manco Cápac 890,Puno,Puno,Peru
-Eduardo Manuel,Manuel,Mendoza Ramos,M,2017-04-26,true,Av. Ejército 890,Arequipa,Arequipa,Peru
-Víctor Hugo,Jaime,Guerrero Pinto,M,1973-01-31,false,Jr. Carabaya 321,Lima,Lima,Peru
-Carmen Lucía,Alejandra,Núñez Medina,F,1937-01-09,false,Av. La Marina 678,San Miguel,Lima,Peru
-Diana Carolina,Cristina,Quispe Mamani,F,1989-07-20,true,Calle Real 567,Huancayo,Junín,Peru
-José Antonio,Miguel,Villanueva Paz,M,1940-12-12,false,Jr. Lima 123,Cusco,Cusco,Peru
-Jorge Luis,Arturo,Ramos Cueto,M,1949-11-24,false,Calle Comercio 234,Tacna,Tacna,Peru
-Claudia Beatriz,Cecilia,Guerrero Pinto,F,1942-10-11,false,Calle Libertad 123,Cajamarca,Cajamarca,Peru
-Rafael Eduardo,Humberto,Ramos Cueto,M,1958-06-01,false,Calle Bolívar 234,Trujillo,La Libertad,Peru
-Lucía Fernanda,Fernanda,Alvarado Fuentes,F,1967-04-04,false,Calle Bolívar 234,Trujillo,La Libertad,Peru
-Paola Alejandra,Cristina,Castro Díaz,F,1990-12-27,false,Av. Ejército 890,Arequipa,Arequipa,Peru
-Juan Carlos,,Rodríguez Martínez,M,1990-07-18,false,Calle Los Pinos 789,Miraflores,Lima,Peru
-Víctor Hugo,Álvaro,Delgado Orellana,M,1948-01-27,true,Jr. Tacna 456,Piura,Piura,Peru
-Miguel Angel,Álvaro,Contreras Campos,M,2009-12-29,true,Calle Los Pinos 789,Miraflores,Lima,Peru
-Miriam Graciela,Lorena,Aguilar Vera,F,2017-08-15,false,Jr. Lima 123,Cusco,Cusco,Peru
-Carmen Lucía,Esperanza,Guerrero Pinto,F,1949-10-07,true,Av. Pacífico 345,Chimbote,Áncash,Peru
-Eduardo Manuel,Ignacio,Pacheco Tapia,M,1983-06-09,false,Av. La Marina 678,San Miguel,Lima,Peru
-Carmen Lucía,Milagros,Espinoza Ruiz,F,1993-09-25,false,Av. Manco Cápac 890,Puno,Puno,Peru
-Miguel Angel,Ignacio,Ponce Herrera,M,1966-02-20,true,Av. Ejército 890,Arequipa,Arequipa,Peru
-Sergio Daniel,Raúl,Riveros Cabrera,M,1949-12-24,false,Calle Bolívar 234,Trujillo,La Libertad,Peru
-Silvia Rosario,Noemí,Flores Chávez,F,2020-06-02,false,Jr. San Martín 012,Huaraz,Áncash,Peru
-Patricia Sofía,Cristina,Torres Vargas,F,1952-09-21,false,Av. Grau 901,Chiclayo,Lambayeque,Peru
-Roberto Carlos,Manuel,Palomino Silva,M,2022-11-11,false,Av. Ejército 890,Arequipa,Arequipa,Peru
-Carmen Lucía,Esperanza,Pacheco Tapia,F,1985-07-24,true,Calle Independencia 789,Iquitos,Loreto,Peru
-Rosa Isabel,,Ponce Herrera,F,1995-07-30,true,Av. Grau 901,Chiclayo,Lambayeque,Peru
-Ricardo Martín,Ignacio,Huanca Flores,M,1975-08-05,false,Calle Real 567,Huancayo,Junín,Peru
-Diego Armando,Álvaro,Paredes León,M,1965-06-11,false,Av. La Marina 678,San Miguel,Lima,Peru
-Juan Carlos,Ernesto,Palomino Silva,M,2024-11-23,false,Calle Real 567,Huancayo,Junín,Peru
-Rosa Isabel,Esperanza,García López,F,1984-02-29,true,Av. Pacífico 345,Chimbote,Áncash,Peru
-Ricardo Martín,Arturo,Salinas Romero,M,2020-05-27,false,Calle Los Pinos 789,Miraflores,Lima,Peru
-Rafael Eduardo,Ernesto,Delgado Orellana,M,1952-11-27,false,Jr. Lima 123,Cusco,Cusco,Peru
-Juan Carlos,Augusto,Guerrero Pinto,M,1957-05-24,false,Av. Centenario 678,Pucallpa,Ucayali,Peru
-Ricardo Martín,,Riveros Cabrera,M,1967-12-15,true,Calle Comercio 234,Tacna,Tacna,Peru
-Pablo Enrique,,Palomino Silva,M,1945-08-15,false,Av. Pacífico 345,Chimbote,Áncash,Peru
-Susana Beatriz,Isabel,Palomino Silva,F,1962-07-29,false,Jr. San Martín 012,Huaraz,Áncash,Peru
-Susana Beatriz,Noemí,Paredes León,F,1953-08-21,true,Jr. Tacna 456,Piura,Piura,Peru
-Luis Alberto,Ignacio,Salinas Romero,M,1977-02-13,false,Calle Real 567,Huancayo,Junín,Peru
-Miriam Graciela,Isabel,Delgado Orellana,F,1986-11-20,false,Av. Universitaria 1234,Lima,Lima,Peru
-Verónica Judith,Alejandra,Guerrero Pinto,F,1962-04-09,false,Av. Arequipa 2345,San Isidro,Lima,Peru
-Andrés Felipe,Rodrigo,Condori Apaza,M,2024-10-10,false,Calle Bolívar 234,Trujillo,La Libertad,Peru
-Lucía Fernanda,Rosario,Rodríguez Martínez,F,1960-07-24,false,Jr. Tacna 456,Piura,Piura,Peru
-Rosa Isabel,Noemí,Condori Apaza,F,1996-11-04,false,Calle Independencia 789,Iquitos,Loreto,Peru
-Pablo Enrique,Manuel,Paredes León,M,1995-08-18,false,Calle Independencia 789,Iquitos,Loreto,Peru
-Valeria Esther,Lorena,Riveros Cabrera,F,1966-03-24,false,Jr. Ayacucho 567,Ayacucho,Ayacucho,Peru
-Natalia Milagros,Esperanza,Mendoza Ramos,F,2004-08-25,false,Calle Los Pinos 789,Miraflores,Lima,Peru
-Alejandro Luis,Felipe,García López,M,1962-05-02,false,Jr. Carabaya 321,Lima,Lima,Peru
-Carmen Lucía,Esperanza,Guerrero Pinto,F,2014-03-12,false,Av. Universitaria 1234,Lima,Lima,Peru
-Alejandro Luis,Jaime,Villanueva Paz,M,1995-11-04,false,Jr. Ayacucho 567,Ayacucho,Ayacucho,Peru
-Víctor Hugo,,Riveros Cabrera,M,2018-12-24,false,Av. Centenario 678,Pucallpa,Ucayali,Peru
-Silvia Rosario,Alejandra,Ramos Cueto,F,2013-04-30,true,Av. Ejército 890,Arequipa,Arequipa,Peru
-Claudia Beatriz,Cecilia,Riveros Cabrera,F,2022-07-23,false,Av. Centenario 678,Pucallpa,Ucayali,Peru
-Sandra Paola,Soledad,Ponce Herrera,F,2020-12-01,true,Calle Real 567,Huancayo,Junín,Peru
-Paola Alejandra,,Mendoza Ramos,F,1960-11-04,false,Av. Centenario 678,Pucallpa,Ucayali,Peru
-Eduardo Manuel,Rodrigo,Contreras Campos,M,2013-06-29,false,Calle Libertad 123,Cajamarca,Cajamarca,Peru
-Fernando José,Jaime,Vega Herrera,M,1939-10-04,false,Jr. Huallaga 456,Lima,Lima,Peru
-Patricia Sofía,Lorena,Huanca Flores,F,1987-06-08,false,Calle Independencia 789,Iquitos,Loreto,Peru
-Natalia Milagros,Milagros,Espinoza Ruiz,F,1950-03-07,false,Calle Independencia 789,Iquitos,Loreto,Peru
-Gabriela Alejandra,Esperanza,Condori Apaza,F,1985-10-17,false,Jr. Carabaya 321,Lima,Lima,Peru
-Natalia Milagros,Soledad,Benites Soto,F,1954-02-07,false,Av. Arequipa 2345,San Isidro,Lima,Peru
-Lorena Marisol,Rosario,Delgado Orellana,F,2001-12-06,false,Calle Real 567,Huancayo,Junín,Peru
-David Rodrigo,Augusto,Cruz Morales,M,1974-02-04,false,Av. Centenario 678,Pucallpa,Ucayali,Peru
-Paola Alejandra,Cristina,Salinas Romero,F,1988-02-20,false,Av. Manco Cápac 890,Puno,Puno,Peru
-Paola Alejandra,Cecilia,Alvarado Fuentes,F,1979-10-11,false,Calle Independencia 789,Iquitos,Loreto,Peru
-Diego Armando,Manuel,Aquino Lazo,M,2006-10-13,true,Jr. Lima 123,Cusco,Cusco,Peru
-Andrés Felipe,Miguel,Salinas Romero,M,2023-12-01,false,Calle Comercio 234,Tacna,Tacna,Peru
-Pablo Enrique,Gonzalo,Reyes Sánchez,M,1952-09-18,false,Jr. Tacna 456,Piura,Piura,Peru
-Andrés Felipe,,Rodríguez Martínez,M,1970-11-04,false,Av. La Marina 678,San Miguel,Lima,Peru
-Valeria Esther,Fernanda,Espinoza Ruiz,F,2014-08-23,true,Jr. Lima 123,Cusco,Cusco,Peru
-Eduardo Manuel,Rodrigo,Ramos Cueto,M,2022-09-23,true,Jr. Carabaya 321,Lima,Lima,Peru
-Valeria Esther,Alejandra,Villanueva Paz,F,1944-10-15,false,Calle Real 567,Huancayo,Junín,Peru
-Diana Carolina,Alejandra,Espinoza Ruiz,F,1960-04-13,false,Jr. Carabaya 321,Lima,Lima,Peru
-David Rodrigo,Ernesto,Núñez Medina,M,1979-01-15,false,Jr. San Martín 012,Huaraz,Áncash,Peru
-Diego Armando,Rodrigo,Delgado Orellana,M,1976-02-29,true,Calle Independencia 789,Iquitos,Loreto,Peru
-Diego Armando,Álvaro,Cruz Morales,M,1960-01-16,false,Av. Grau 901,Chiclayo,Lambayeque,Peru
-Ricardo Martín,Raúl,Contreras Campos,M,1969-02-12,false,Av. Pacífico 345,Chimbote,Áncash,Peru
-Patricia Sofía,Cecilia,Villanueva Paz,F,1968-10-12,true,Av. Centenario 678,Pucallpa,Ucayali,Peru
-Fernando José,Ernesto,Rodríguez Martínez,M,1954-01-19,false,Av. Pacífico 345,Chimbote,Áncash,Peru
-Roberto Carlos,Arturo,Aquino Lazo,M,1960-04-11,true,Jr. Lima 123,Cusco,Cusco,Peru
-Alejandro Luis,Rodrigo,Aguilar Vera,M,2004-02-02,false,Calle Libertad 123,Cajamarca,Cajamarca,Peru
-Alejandro Luis,Ernesto,Quispe Mamani,M,1940-01-13,false,Calle Comercio 234,Tacna,Tacna,Peru
-Sandra Paola,Noemí,Condori Apaza,F,2019-01-28,true,Av. Universitaria 1234,Lima,Lima,Peru
-Diana Carolina,Noemí,Huanca Flores,F,1957-08-20,false,Calle Comercio 234,Tacna,Tacna,Peru
-Rosa Isabel,Soledad,Torres Vargas,F,1971-09-20,false,Av. Pacífico 345,Chimbote,Áncash,Peru
-Natalia Milagros,Soledad,Ramos Cueto,F,1992-01-24,true,Av. La Marina 678,San Miguel,Lima,Peru
-Fernando José,Andrés,Contreras Campos,M,1985-11-26,false,Calle Comercio 234,Tacna,Tacna,Peru
-Miriam Graciela,,Huanca Flores,F,1959-06-08,false,Jr. Lima 123,Cusco,Cusco,Peru
-Valeria Esther,Soledad,Torres Vargas,F,2020-06-06,false,Av. Manco Cápac 890,Puno,Puno,Peru
-Valeria Esther,Milagros,Aquino Lazo,F,1984-06-05,false,Calle Real 567,Huancayo,Junín,Peru
-Pedro Pablo,Ignacio,Torres Vargas,M,1951-11-02,true,Calle Independencia 789,Iquitos,Loreto,Peru
-Lucía Fernanda,,Ponce Herrera,F,1994-09-24,false,Jr. Carabaya 321,Lima,Lima,Peru
-Andrés Felipe,Ernesto,Riveros Cabrera,M,1979-04-15,false,Jr. San Martín 012,Huaraz,Áncash,Peru
-Eduardo Manuel,Andrés,Ramos Cueto,M,1962-02-18,false,Calle Bolívar 234,Trujillo,La Libertad,Peru
-Valeria Esther,Cecilia,Torres Vargas,F,1968-04-05,true,Av. Centenario 678,Pucallpa,Ucayali,Peru
-Paola Alejandra,Lorena,Flores Chávez,F,2019-04-01,false,Av. Arequipa 2345,San Isidro,Lima,Peru
+givenName,middleName,familyName,gender,birthdate,birthdateEstimated,address1,stateProvince,country,DNI
+Ximena,Lorena,MAMANI VARGAS,F,1981-5-23,false,JR. TACNA 456,PIURA,PERU,92801526
+Gabriela,Verónica,PACHECO TAPIA,F,1936-6-20,false,AV. GRAU 901,LAMBAYEQUE,PERU,76553537
+Ricardo,César,AGUILAR MORALES,M,1993-6-27,false,AV. MANCO CAPAC 890,PUNO,PERU,93309063
+Gloria,Alejandra,CONTRERAS DIAZ,F,1973-4-17,false,CALLE LIBERTAD 123,CAJAMARCA,PERU,51999247
+Claudia,Rosario,BENITES TAPIA,F,1993-9-20,false,CALLE COMERCIO 234,TACNA,PERU,40084537
+Susana,Soledad,CRUZ MAMANI,F,1972-11-15,false,CALLE INDEPENDENCIA 789,MAYNAS,PERU,96363019
+Hugo,,RUIZ MAMANI,M,2006-1-11,false,JR. LIMA 123,CUSCO,PERU,70647809
+Lorena,Esperanza,GUERRERO MORALES,F,1963-10-30,false,AV. AREQUIPA 2345,LIMA,PERU,68883371
+Víctor,Francisco,PAREDES CHOQUE,M,1954-7-24,false,JR. AYACUCHO 567,HUAMANGA,PERU,41905870
+Gloria,Cristina,CCOPA TICONA,F,1984-11-10,false,AV. UNIVERSITARIA 1234,LIMA,PERU,69847507
+Verónica,Lorena,CONTRERAS RAMOS,F,1949-8-18,false,AV. UNIVERSITARIA 1234,LIMA,PERU,68767105
+Óscar,Ernesto,LIMA SOTO,M,1943-3-16,false,AV. CENTENARIO 678,CORONEL PORTILLO,PERU,80480683
+Noemí,,VEGA MENDEZ,F,2001-4-21,false,JR. SAN MARTIN 012,HUARAZ,PERU,92891211
+Andrés,Augusto,DIAZ DIAZ,M,1966-12-6,false,AV. GRAU 901,LAMBAYEQUE,PERU,27737512
+Rosa,Isabel,HUANCA CABRERA,F,1993-6-7,false,CALLE LIBERTAD 123,CAJAMARCA,PERU,19773241
+Lorena,Luciana,RODRIGUEZ PINTO,F,2004-6-13,false,JR. LIMA 123,CUSCO,PERU,29669854
+Ricardo,Miguel,AGUILAR ROJAS,M,2000-12-17,false,AV. PACIFICO 345,SANTA,PERU,97676639
+Ana,Vanesa,RODRIGUEZ TAPIA,F,2013-4-4,false,AV. LA MARINA 678,LIMA,PERU,38943950
+Yolanda,Noemí,PACHECO ROMERO,F,1988-1-24,false,CALLE LOS PINOS 789,LIMA,PERU,32910472
+Patricia,Alejandra,SANCHEZ SOTO,F,1962-1-25,false,AV. LA MARINA 678,LIMA,PERU,96623322
+Jaime,,LIMA ORTIZ,M,1977-4-13,false,AV. AREQUIPA 2345,LIMA,PERU,81139276
+Paola,Cristina,CONTRERAS HERRERA,F,1997-6-30,false,CALLE REAL 567,JUNIN,PERU,31562943
+Carlos,Álvaro,AGUILAR MAMANI,M,2020-4-26,false,JR. SAN MARTIN 012,HUARAZ,PERU,18138278
+María,Paola,REYES ORTIZ,F,2013-1-26,false,AV. EJERCITO 890,AREQUIPA,PERU,68281484
+Eduardo,Ignacio,DIAZ FLORES,M,1937-6-4,false,CALLE LOS PINOS 789,LIMA,PERU,81264975
+Gloria,Vanesa,GUERRERO TICONA,F,1975-4-22,false,AV. AVIACION 456,LIMA,PERU,82504620
+Juan,Enrique,VILLANUEVA LAZO,M,1955-1-17,false,AV. CENTENARIO 678,CORONEL PORTILLO,PERU,40580093
+Ximena,,CONTRERAS TICONA,F,1993-8-22,false,CALLE LOS PINOS 789,LIMA,PERU,55209649
+Cecilia,Cecilia,AQUINO PAZ,F,2015-4-25,false,CALLE LIBERTAD 123,CAJAMARCA,PERU,96072151
+Beatriz,Rocío,SALINAS HERRERA,F,2009-3-26,false,CALLE LIBERTAD 123,CAJAMARCA,PERU,68301595
+Rosa,Vanesa,CASTRO DIAZ,F,1999-4-23,false,JR. SAN MARTIN 012,HUARAZ,PERU,75770988
+Marco,Miguel,AQUINO SANCHEZ,M,1998-8-7,false,JR. LIMA 123,CUSCO,PERU,36870589
+Alberto,Gonzalo,RUIZ TICONA,M,1948-10-3,false,CALLE LOS PINOS 789,LIMA,PERU,34905988
+Rosa,Vanesa,RODRIGUEZ ORELLANA,F,1943-6-20,false,JR. TACNA 456,PIURA,PERU,80145873
+Susana,Luciana,TORRES RAMOS,F,1950-10-22,false,CALLE LOS PINOS 789,LIMA,PERU,53702367
+Miriam,Noemí,MAMANI VARGAS,F,2005-5-28,false,AV. LA MARINA 678,LIMA,PERU,26800037
+Sandra,Soledad,GARCIA GUTIERREZ,F,2007-7-5,false,CALLE REAL 567,JUNIN,PERU,99323780
+Carmen,Luciana,TORRES ROJAS,F,1944-3-4,false,AV. LA MARINA 678,LIMA,PERU,78008669
+Patricia,Melissa,PALOMINO ORTIZ,F,1952-5-9,false,CALLE COMERCIO 234,TACNA,PERU,35926336
+Miriam,Karina,RODRIGUEZ RUIZ,F,1979-6-13,false,AV. PACIFICO 345,SANTA,PERU,19396035
+Andrés,Daniel,MAMANI VARGAS,M,1974-3-21,false,CALLE BOLIVAR 234,LA LIBERTAD,PERU,38956481
+Claudia,Esperanza,PALOMINO MAMANI,F,2009-3-27,false,AV. PACIFICO 345,SANTA,PERU,65620812
+Patricia,Paola,CASTRO HERRERA,F,1962-5-26,false,AV. PACIFICO 345,SANTA,PERU,22637822
+Eduardo,Andrés,TORRES MORALES,M,1959-12-4,false,CALLE COMERCIO 234,TACNA,PERU,86320387
+Yolanda,Esperanza,GARCIA CUETO,F,1991-11-6,true,CALLE LIBERTAD 123,CAJAMARCA,PERU,83210026
+Patricia,Alejandra,RODRIGUEZ MAMANI,F,1987-8-18,false,JR. TACNA 456,PIURA,PERU,56808955
+Pablo,Jaime,AQUINO LAZO,M,1945-4-5,false,AV. UNIVERSITARIA 1234,LIMA,PERU,54853534
+Lucía,Fernanda,VEGA MAMANI,F,1990-3-2,false,JR. SAN MARTIN 012,HUARAZ,PERU,45572716
+Claudia,,RUIZ RAMOS,F,1981-6-3,false,CALLE LIBERTAD 123,CAJAMARCA,PERU,22421767
+Yolanda,Fernanda,TORRES DIAZ,F,2016-10-21,false,AV. CENTENARIO 678,CORONEL PORTILLO,PERU,26186467
+Pablo,Daniel,VILLANUEVA HERRERA,M,2010-10-19,false,AV. MANCO CAPAC 890,PUNO,PERU,86074103
+Gloria,Luciana,CRUZ CHAVEZ,F,1954-6-29,true,CALLE BOLIVAR 234,LA LIBERTAD,PERU,57868909
+Manuel,Andrés,PACHECO ORELLANA,M,2010-9-9,false,AV. MANCO CAPAC 890,PUNO,PERU,23862728
+Manuel,Francisco,CHÁVEZ PINTO,M,2006-6-1,false,JR. LIMA 123,CUSCO,PERU,56883272
+Sergio,Raúl,CASTRO ROMERO,M,2020-2-24,false,CALLE LOS PINOS 789,LIMA,PERU,66874082
+Juan,Andrés,AQUINO MAMANI,M,2024-4-2,false,JR. SAN MARTIN 012,HUARAZ,PERU,28676479
+Rebeca,Verónica,CONTRERAS LAZO,F,1979-8-14,false,JR. TACNA 456,PIURA,PERU,95136503
+Ana,Rocío,RODRIGUEZ VERA,F,1996-11-14,false,JR. LIMA 123,CUSCO,PERU,47250261
+Arturo,Miguel,DIAZ GUTIERREZ,M,1953-4-7,false,JR. TACNA 456,PIURA,PERU,58293120
+Alejandro,Álvaro,HERRERA MENDEZ,M,1954-5-20,true,JR. AYACUCHO 567,HUAMANGA,PERU,87499185
+Elena,Paola,RAMOS LAZO,F,2014-9-29,false,AV. MANCO CAPAC 890,PUNO,PERU,54107747
+Diana,Rocío,RAMOS CUETO,F,2012-10-23,false,JR. HUALLAGA 456,LIMA,PERU,40037472
+Rebeca,Noemí,PACHECO APAZA,F,1955-8-23,false,AV. UNIVERSITARIA 1234,LIMA,PERU,63036601
+Manuel,,ESPINOZA MENDEZ,M,1944-4-27,false,AV. LA MARINA 678,LIMA,PERU,33106707
+Yolanda,Verónica,NUÑEZ MENDEZ,F,1996-9-29,false,CALLE BOLIVAR 234,LA LIBERTAD,PERU,89785708
+Ana,Karina,REYES VERA,F,1973-6-16,false,AV. CENTENARIO 678,CORONEL PORTILLO,PERU,59167184
+Sergio,,DIAZ TAPIA,M,1997-9-28,false,CALLE INDEPENDENCIA 789,MAYNAS,PERU,93540513
+Paola,Vanesa,VILLANUEVA DIAZ,F,1989-5-11,false,AV. GRAU 901,LAMBAYEQUE,PERU,28591310
+Eduardo,Jaime,REYES MORALES,M,1966-2-21,false,AV. UNIVERSITARIA 1234,LIMA,PERU,29223076
+Rafael,Jaime,ESPINOZA TICONA,M,2014-12-3,false,JR. TACNA 456,PIURA,PERU,14675155
+Claudia,Fernanda,CASTRO TICONA,F,1941-4-21,false,AV. CENTENARIO 678,CORONEL PORTILLO,PERU,15475514
+Miguel,Jaime,CHÁVEZ MARTINEZ,M,2007-7-9,false,AV. MANCO CAPAC 890,PUNO,PERU,17446720
+Ernesto,Miguel,PAREDES LEON,M,2023-5-21,false,CALLE LIBERTAD 123,CAJAMARCA,PERU,33021266
+María,Milagros,ALVARADO CAMPOS,F,1991-2-5,false,AV. GRAU 901,LAMBAYEQUE,PERU,68489834
+Miguel,Augusto,LIMA RAMOS,M,1953-12-10,false,JR. LIMA 123,CUSCO,PERU,90943450
+Diana,Noemí,RODRIGUEZ FLORES,F,2002-5-5,false,AV. LA MARINA 678,LIMA,PERU,42747076
+Pedro,Raúl,MAMANI APAZA,M,2005-6-20,false,AV. PACIFICO 345,SANTA,PERU,19204683
+Andrés,Alberto,AGUILAR CHAVEZ,M,1973-6-4,false,CALLE BOLIVAR 234,LA LIBERTAD,PERU,84212725
+Sergio,Augusto,CONDORI MEDINA,M,1996-10-18,false,AV. EJERCITO 890,AREQUIPA,PERU,41994738
+Patricia,Fernanda,CCOPA TAPIA,F,1958-5-18,true,CALLE INDEPENDENCIA 789,MAYNAS,PERU,52462653
+Diego,Daniel,CHÁVEZ LEON,M,1993-4-1,false,AV. MANCO CAPAC 890,PUNO,PERU,51770205
+Fernando,,NUÑEZ ORTIZ,M,1958-8-15,false,JR. LIMA 123,CUSCO,PERU,90778181
+Gloria,Karina,PAREDES FUENTES,F,1952-10-12,false,CALLE INDEPENDENCIA 789,MAYNAS,PERU,16803832
+Ana,Noemí,CHÁVEZ PAZ,F,1978-11-19,true,AV. AVIACION 456,LIMA,PERU,38311782
+Yolanda,Karina,VEGA ORTIZ,F,1971-9-26,false,AV. AREQUIPA 2345,LIMA,PERU,76989534
+Jaime,Raúl,TORRES DIAZ,M,1984-2-16,false,JR. SAN MARTIN 012,HUARAZ,PERU,11125625
+Héctor,Álvaro,APAZA MENDEZ,M,2021-7-12,false,CALLE BOLIVAR 234,LA LIBERTAD,PERU,50625042
+Raúl,Felipe,HUANCA FLORES,M,1942-11-30,true,JR. HUALLAGA 456,LIMA,PERU,70642112
+Claudia,Fernanda,ESPINOZA LEON,F,1979-2-14,false,AV. GRAU 901,LAMBAYEQUE,PERU,18926038
+Pablo,Miguel,PALOMINO DIAZ,M,1999-2-14,false,CALLE COMERCIO 234,TACNA,PERU,77935162
+Isabel,Melissa,RAMOS CHOQUE,F,1949-11-3,false,CALLE LOS PINOS 789,LIMA,PERU,72334537
+Gloria,Alejandra,RIVEROS SOTO,F,1979-9-10,false,AV. MANCO CAPAC 890,PUNO,PERU,57825125
+Raúl,Humberto,PONCE ROMERO,M,1998-2-1,false,AV. GRAU 901,LAMBAYEQUE,PERU,79608608
+Manuel,César,MENDOZA GUTIERREZ,M,2008-2-25,false,AV. CENTENARIO 678,CORONEL PORTILLO,PERU,71044171
+Sergio,Antonio,BENITES FUENTES,M,2011-10-31,false,CALLE LIBERTAD 123,CAJAMARCA,PERU,99758710
+Sandra,Beatriz,VARGAS MEDINA,F,2023-4-24,false,AV. UNIVERSITARIA 1234,LIMA,PERU,15126103
+Sergio,Ernesto,CCOPA APAZA,M,1945-3-4,false,JR. AYACUCHO 567,HUAMANGA,PERU,62979317
+Patricia,Paola,RAMOS MORALES,F,1948-12-5,false,CALLE LOS PINOS 789,LIMA,PERU,60523456
+Natalia,Luciana,VEGA TICONA,F,2009-3-10,true,CALLE REAL 567,JUNIN,PERU,89994869
+Héctor,Augusto,PALOMINO HERRERA,M,1938-10-7,false,AV. LA MARINA 678,LIMA,PERU,60530846
