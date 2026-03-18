@@ -5,8 +5,6 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
-      <boolProp name="TestPlan.functional_mode">false</boolProp>
-      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
       <ProxyControl guiclass="ProxyControlGui" testclass="ProxyControl" testname="HTTP(S) Test Script Recorder">
@@ -83,16 +81,31 @@
       </Arguments>
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
-        <intProp name="ThreadGroup.num_threads">1</intProp>
-        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <intProp name="ThreadGroup.num_threads">100</intProp>
+        <intProp name="ThreadGroup.ramp_time">120</intProp>
+        <longProp name="ThreadGroup.duration">600</longProp>
+        <longProp name="ThreadGroup.delay">0</longProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
           <stringProp name="LoopController.loops">1</stringProp>
           <boolProp name="LoopController.continue_forever">false</boolProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">D:/SIH-SALUS/quality-measurement-jmeter/data/pacientes_test_100.csv</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <boolProp name="quotedData">true</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames"></stringProp>
+        </CSVDataSet>
+        <hashTree/>
         <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager">
           <collectionProp name="AuthManager.auth_list">
             <elementProp name="" elementType="Authorization">
@@ -351,7 +364,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;person&quot;:{&quot;names&quot;:[{&quot;preferred&quot;:true,&quot;givenName&quot;:&quot;Saul&quot;,&quot;middleName&quot;:&quot;&quot;,&quot;familyName&quot;:&quot;Damian Rojas&quot;}],&quot;gender&quot;:&quot;M&quot;,&quot;birthdate&quot;:&quot;2026-3-14&quot;,&quot;birthdateEstimated&quot;:false,&quot;attributes&quot;:[],&quot;addresses&quot;:[{&quot;country&quot;:&quot;PERU&quot;,&quot;stateProvince&quot;:&quot;MAYNAS&quot;,&quot;address1&quot;:&quot;LORETO&quot;}],&quot;dead&quot;:false},&quot;identifiers&quot;:[{&quot;identifier&quot;:&quot;78986530&quot;,&quot;identifierType&quot;:&quot;${dni_type_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;preferred&quot;:true},{&quot;identifier&quot;:&quot;${identifier_uuid}&quot;,&quot;identifierType&quot;:&quot;${hc_type_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;preferred&quot;:false}]}</stringProp>
+                <stringProp name="Argument.value">{&quot;person&quot;:{&quot;names&quot;:[{&quot;preferred&quot;:true,&quot;givenName&quot;:&quot;${givenName}&quot;,&quot;middleName&quot;:&quot;${middleName}&quot;,&quot;familyName&quot;:&quot;${familyName}&quot;}],&quot;gender&quot;:&quot;${gender}&quot;,&quot;birthdate&quot;:&quot;${birthdate}&quot;,&quot;birthdateEstimated&quot;:false,&quot;attributes&quot;:[],&quot;addresses&quot;:[{&quot;country&quot;:&quot;${country}&quot;,&quot;stateProvince&quot;:&quot;${stateProvince}&quot;,&quot;address1&quot;:&quot;${address1}&quot;}],&quot;dead&quot;:false},&quot;identifiers&quot;:[{&quot;identifier&quot;:&quot;${DNI}&quot;,&quot;identifierType&quot;:&quot;${dni_type_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;preferred&quot;:true},{&quot;identifier&quot;:&quot;${identifier_uuid}&quot;,&quot;identifierType&quot;:&quot;${hc_type_uuid}&quot;,&quot;location&quot;:&quot;${location_uuid}&quot;,&quot;preferred&quot;:false}]}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
